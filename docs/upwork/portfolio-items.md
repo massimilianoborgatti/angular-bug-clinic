@@ -65,3 +65,19 @@ Publish-ready copy for the owner to use manually. Every example uses original, n
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)
 
 **Screenshots:** [Broken](../screenshots/04-broken.png) · [Fixed](../screenshots/04-fixed.png)
+
+## 05 — Ionic back button
+
+**Title:** Ionic bug fix: close a modal before hardware Back navigates
+
+**Role:** Developer
+
+**Description:** A custom back-button handler navigated the page beneath an open Ionic modal. I traced the conflict to a handler running above the overlay priority, lowered navigation priority, and released the handler on destroy. Priority-dispatch unit tests and a real browser modal verify that the first back press closes notes and only the next press navigates.
+
+**Skills:** Angular, TypeScript, Ionic Framework, Unit Testing, Bug Fix
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/src/app/cases/05-ionic-back-button)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)
+
+**Screenshots:** [Broken](../screenshots/05-broken.png) · [Fixed](../screenshots/05-fixed.png)
