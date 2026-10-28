@@ -81,3 +81,73 @@ test('Fixed can replay a guest navigation after the task list has already opened
   await expect(page.getByTestId('guard-tasks')).not.toBeVisible();
   await expect(page.getByTestId('redirect-count')).toHaveText('1');
 });
+
+test('child hash navigation synchronizes the reused parent even when a route variant repeats', async ({
+  page,
+}) => {
+  await page.goto('./#/cases/04-guard-redirect-loop');
+  await expect(page.getByRole('tab', { name: 'Broken', exact: true })).toHaveAttribute(
+    'aria-selected',
+    'true',
+  );
+
+  await page.evaluate(() => {
+    location.hash = '#/cases/04-guard-redirect-loop/fixed/tasks';
+  });
+  await expect(page).toHaveURL(/fixed\/login\?returnUrl=/);
+  await expect(page.getByRole('tab', { name: 'Fixed', exact: true })).toHaveAttribute(
+    'aria-selected',
+    'true',
+  );
+  await expect(page.getByTestId('guard-login')).toBeVisible();
+
+  await page.getByRole('tab', { name: 'Broken', exact: true }).click();
+  await expect(page).toHaveURL(/04-guard-redirect-loop$/);
+  await expect(page.getByRole('tab', { name: 'Broken', exact: true })).toHaveAttribute(
+    'aria-selected',
+    'true',
+  );
+  await expect(page.getByTestId('guard-login')).not.toBeVisible();
+
+  // The route mode is Fixed again, but the intervening manual tab selection must be replaced.
+  await page.evaluate(() => {
+    location.hash = '#/cases/04-guard-redirect-loop/fixed/tasks';
+  });
+  await expect(page).toHaveURL(/fixed\/login\?returnUrl=/);
+  await expect(page.getByRole('tab', { name: 'Fixed', exact: true })).toHaveAttribute(
+    'aria-selected',
+    'true',
+  );
+  await expect(page.getByTestId('guard-login')).toBeVisible();
+});
+
+test('browser history keeps the selected tab aligned with its child route', async ({ page }) => {
+  await page.goto('./#/cases/04-guard-redirect-loop');
+  await page.evaluate(() => {
+    location.hash = '#/cases/04-guard-redirect-loop/fixed/tasks';
+  });
+  await expect(page.getByTestId('guard-login')).toBeVisible();
+
+  await page.evaluate(() => {
+    location.hash = '#/cases/04-guard-redirect-loop/broken/tasks';
+  });
+  await expect(page.getByTestId('guard-stopped')).toBeVisible();
+  await expect(page.getByRole('tab', { name: 'Broken', exact: true })).toHaveAttribute(
+    'aria-selected',
+    'true',
+  );
+
+  await page.goBack();
+  await expect(page.getByTestId('guard-login')).toBeVisible();
+  await expect(page.getByRole('tab', { name: 'Fixed', exact: true })).toHaveAttribute(
+    'aria-selected',
+    'true',
+  );
+
+  await page.goForward();
+  await expect(page.getByTestId('guard-stopped')).toBeVisible();
+  await expect(page.getByRole('tab', { name: 'Broken', exact: true })).toHaveAttribute(
+    'aria-selected',
+    'true',
+  );
+});
