@@ -49,3 +49,19 @@ Publish-ready copy for the owner to use manually. Every example uses original, n
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race)
 
 **Screenshots:** [Broken](../screenshots/03-broken.png) · [Fixed](../screenshots/03-fixed.png)
+
+## 04 — Guard redirect loop
+
+**Title:** Angular bug fix: resolve an authentication redirect loop
+
+**Role:** Developer
+
+**Description:** A route guard redirected guests to a login page protected by the same guard. I reproduced the real Router loop with a safe attempt limit, left login unguarded, returned UrlTrees, and allowlisted the return destination. RouterTestingHarness and browser tests verify one login redirect, a successful return to the original task page, and rejection of unsafe return targets.
+
+**Skills:** Angular, TypeScript, Unit Testing, Playwright, Bug Fix
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/src/app/cases/04-guard-redirect-loop)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)
+
+**Screenshots:** [Broken](../screenshots/04-broken.png) · [Fixed](../screenshots/04-fixed.png)
