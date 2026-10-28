@@ -58,7 +58,7 @@ export const cases: ClinicCase[] = [
     cause: 'The same authentication guard protects both the destination and the login route.',
     fix: 'Leave login unguarded, return a UrlTree, and validate the return target.',
     takeaway: 'Every redirect needs a reachable destination.',
-    ready: false,
+    ready: true,
   },
   {
     id: '05',
