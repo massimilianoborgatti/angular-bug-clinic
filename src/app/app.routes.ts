@@ -9,8 +9,7 @@ export const routes: Routes = [
   },
   {
     path: 'cases/02-onpush-stale-view',
-    loadComponent: () => import('./shared/planned-case').then((m) => m.PlannedCase),
-    data: { slug: '02-onpush-stale-view' },
+    loadComponent: () => import('./cases/02-onpush-stale-view/case-02').then((m) => m.Case02),
     title: 'Case 02 · Angular Bug Clinic',
   },
   {
