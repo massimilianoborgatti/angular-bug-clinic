@@ -10,7 +10,7 @@
 
 **Root cause:** a custom navigation handler registers at priority 101. Ionic's modal handler uses priority 100, so navigation wins and consumes the event. Only the winning handler runs unless it explicitly propagates. This example uses a real Ionic modal and an in-memory page stack so it stays self-contained.
 
-**The fix:** lower custom navigation to priority 0. Ionic's overlay then gets the first press. Both versions release their subscription on destruction so switching examples cannot leave global handlers behind. See the [case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pulls?q=is%3Apr+head%3Acase%2F05-ionic-back-button).
+**The fix:** lower custom navigation to priority 0. Ionic's overlay then gets the first press. Both versions release their subscription on destruction so switching examples cannot leave global handlers behind. See the [case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pull/7).
 
 **How it's tested:** one shared invariant runs against both components with a mocked Platform priority dispatcher: the first press must close the modal without navigation. Broken is an expected failure; Fixed passes. Additional tests prove the visible bug, second-press navigation, unsubscribe, and the browser bridge's event ordering.
 
