@@ -13,6 +13,6 @@
 
 **The fix:** A single `switchMap` chain cancels the previous request as soon as another value arrives. An 80 ms debounce sits inside that cancellable chain, and a visible pending message explains the wait. Both versions tear down their subscriptions when the page closes. See the [case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pull/4).
 
-**How it's tested:** A shared unit assertion checks that the latest username owns the final errors and rendered message. It is an expected failure for Broken and passes for Fixed; a separate test confirms the exact stale-response symptom. The default Vitest runner uses controlled fake timers instead of Zone-based `fakeAsync`. Playwright repeats the same user journey in the browser.
+**How it's tested:** A shared unit assertion checks that the latest username owns the final errors and rendered message. It is an expected failure for Broken and passes for Fixed; a separate test confirms the exact stale-response symptom. The default Vitest runner uses controlled fake timers instead of Zone-based `fakeAsync`. Playwright uses its virtual clock to finish the full replay before checking the final message.
 
 **Takeaway:** A response must still belong to the current input before it can decide the user's next step.
