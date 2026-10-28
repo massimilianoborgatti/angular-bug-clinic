@@ -1,0 +1,24 @@
+<header class="site-header">
+  <a routerLink="/" class="brand" aria-label="Angular Bug Clinic home"
+    ><span class="brand-icon" aria-hidden="true">+</span
+    ><span>Angular <strong>Bug Clinic</strong></span></a
+  >
+  <nav aria-label="Main navigation">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+      >Case library</a
+    ><a
+      href="https://github.com/massimilianoborgatti/angular-bug-clinic"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Source code <span aria-hidden="true">↗</span></a
+    >
+  </nav>
+  <span class="header-note"><span class="live-dot"></span> Small bugs. Clear fixes.</span>
+</header>
+<main id="main"><router-outlet /></main>
+<footer class="site-footer">
+  <span>Built to make debugging visible.</span><span>Angular · TypeScript · RxJS · Ionic</span
+  ><a href="https://github.com/massimilianoborgatti/angular-bug-clinic/blob/main/LICENSE"
+    >MIT licensed</a
+  >
+</footer>
