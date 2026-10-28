@@ -12,7 +12,7 @@ A collection of real-world Angular/Ionic bugs, each with a broken version, a fix
 | 02 — OnPush stale view    | [Read](src/app/cases/02-onpush-stale-view/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)    | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pulls?q=is%3Apr+head%3Acase%2F02-onpush-stale-view)    |
 | 03 — Async validator race | [Read](src/app/cases/03-async-validator-race/README.md) | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race) | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pulls?q=is%3Apr+head%3Acase%2F03-async-validator-race) |
 | 04 — Guard redirect loop  | [Read](src/app/cases/04-guard-redirect-loop/README.md)  | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)  | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pulls?q=is%3Apr+head%3Acase%2F04-guard-redirect-loop)  |
-| 05 — Ionic back button    | Coming in its case PR                                   | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | Pending                                                                                                                     |
+| 05 — Ionic back button    | [Read](src/app/cases/05-ionic-back-button/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pulls?q=is%3Apr+head%3Acase%2F05-ionic-back-button)    |
 
 ## Run locally
 
@@ -40,7 +40,7 @@ The desired behavior is tested against both versions. Broken is marked as an exp
 
 ## Stack
 
-Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), RxJS, the Angular CLI default Vitest runner, angular-eslint, Prettier, Playwright and GitHub Actions. Ionic is added only for case 05. Versions are pinned by package-lock.json.
+Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), RxJS, the Angular CLI default Vitest runner, angular-eslint, Prettier, Playwright and GitHub Actions. Ionic 9.0 is lazy loaded only by case 05. Versions are pinned by package-lock.json.
 
 ## Portfolio material
 

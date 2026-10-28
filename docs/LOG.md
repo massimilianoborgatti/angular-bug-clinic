@@ -33,3 +33,9 @@
 - Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
 - Local validation passed: lint, 25 unit contracts (including four expected Broken failures), 20 browser tests on dev and production Pages paths, and the production build. Both 1600 × 1200 screenshots were visually reviewed. A direct-login test caught and fixed the initial demo-session variant before authentication. Remote CI, merge and live deployment remain unverified.
 - Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
+
+## 2026-10-28 — Case 05: Ionic back button
+
+- Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
+- Local validation passed: lint, 32 unit contracts (including five expected Broken failures), 23 browser tests on dev and production Pages paths, and the strict production build. Both 1600 × 1200 screenshots were visually reviewed. Ionic stays in its lazy route; its required 12.4 kB core stylesheet uses a 14/16 kB per-style warning/error budget. Remote CI, merge and live deployment remain unverified.
+- Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
