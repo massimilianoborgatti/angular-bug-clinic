@@ -673,3 +673,8 @@ pre {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.metric,
+.metric-label {
+  display: block;
+}
