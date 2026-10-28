@@ -70,6 +70,6 @@ export const cases: ClinicCase[] = [
     cause: 'A custom back handler runs before Ionic can dismiss the overlay.',
     fix: 'Respect overlay priorities and unsubscribe the navigation handler on destroy.',
     takeaway: 'Close the top layer before moving the page underneath.',
-    ready: false,
+    ready: true,
   },
 ];
