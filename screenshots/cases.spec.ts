@@ -15,7 +15,9 @@ for (const item of cases.filter((item) => item.ready)) {
           variant === 'Broken' ? '4' : '1',
         );
       } else if (item.id === '02') {
-        await page.getByRole('button', { name: 'Add item', exact: true }).click();
+        await page.getByRole('button', { name: 'Add task', exact: true }).click();
+        await expect(page.getByTestId('parent-count')).toHaveText('3');
+        await expect(page.getByTestId('child-count')).toHaveText(variant === 'Broken' ? '2' : '3');
       } else if (item.id === '03') {
         await page.getByRole('button', { name: 'Reproduce race', exact: true }).click();
         await expect(

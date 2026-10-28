@@ -34,7 +34,7 @@ export const cases: ClinicCase[] = [
     cause: 'An OnPush child receives the same array reference after an in-place mutation.',
     fix: 'Create a new array so the child receives a changed input.',
     takeaway: 'A new reference makes a changed input visible.',
-    ready: false,
+    ready: true,
   },
   {
     id: '03',
