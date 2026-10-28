@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { Home } from './home';
+import { CASE_04_ROUTES } from './cases/04-guard-redirect-loop/shared/guard-routes';
 export const routes: Routes = [
   { path: '', component: Home, title: 'Case library · Angular Bug Clinic' },
   {
@@ -19,9 +20,9 @@ export const routes: Routes = [
   },
   {
     path: 'cases/04-guard-redirect-loop',
-    loadComponent: () => import('./shared/planned-case').then((m) => m.PlannedCase),
-    data: { slug: '04-guard-redirect-loop' },
+    loadComponent: () => import('./cases/04-guard-redirect-loop/case-04').then((m) => m.Case04),
     title: 'Case 04 · Angular Bug Clinic',
+    children: CASE_04_ROUTES,
   },
   {
     path: 'cases/05-ionic-back-button',
