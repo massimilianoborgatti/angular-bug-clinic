@@ -6,13 +6,13 @@ A collection of real-world Angular/Ionic bugs, each with a broken version, a fix
 
 ## Cases
 
-| Case                      | Write-up              | Demo                                                                                              | Pull request |
-| ------------------------- | --------------------- | ------------------------------------------------------------------------------------------------- | ------------ |
-| 01 — Subscription leak    | Coming in its case PR | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/01-subscription-leak)    | Pending      |
-| 02 — OnPush stale view    | Coming in its case PR | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)    | Pending      |
-| 03 — Async validator race | Coming in its case PR | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race) | Pending      |
-| 04 — Guard redirect loop  | Coming in its case PR | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)  | Pending      |
-| 05 — Ionic back button    | Coming in its case PR | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | Pending      |
+| Case                      | Write-up                                             | Demo                                                                                              | Pull request                                                                                                             |
+| ------------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| 01 — Subscription leak    | [Read](src/app/cases/01-subscription-leak/README.md) | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/01-subscription-leak)    | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pulls?q=is%3Apr+head%3Acase%2F01-subscription-leak) |
+| 02 — OnPush stale view    | Coming in its case PR                                | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)    | Pending                                                                                                                  |
+| 03 — Async validator race | Coming in its case PR                                | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race) | Pending                                                                                                                  |
+| 04 — Guard redirect loop  | Coming in its case PR                                | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)  | Pending                                                                                                                  |
+| 05 — Ionic back button    | Coming in its case PR                                | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | Pending                                                                                                                  |
 
 ## Run locally
 

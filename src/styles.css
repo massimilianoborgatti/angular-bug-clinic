@@ -660,3 +660,16 @@ pre {
     scroll-behavior: auto !important;
   }
 }
+
+.metric {
+  margin: 8px 0 16px;
+}
+.demo-card .metric {
+  font-size: 44px;
+  line-height: 1.1;
+}
+@media (min-width: 761px) {
+  .comparison:has(> div:nth-child(3)) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

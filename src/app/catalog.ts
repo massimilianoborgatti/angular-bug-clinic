@@ -22,7 +22,7 @@ export const cases: ClinicCase[] = [
       'A subscription outlives the component that created it. Each visit leaves another listener behind.',
     fix: 'Tie the subscription to the component lifecycle with takeUntilDestroyed.',
     takeaway: 'Every subscription needs an owner and an end.',
-    ready: false,
+    ready: true,
   },
   {
     id: '02',

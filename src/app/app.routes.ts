@@ -2,17 +2,34 @@ import { Routes } from '@angular/router';
 import { Home } from './home';
 export const routes: Routes = [
   { path: '', component: Home, title: 'Case library · Angular Bug Clinic' },
-  ...[
-    '01-subscription-leak',
-    '02-onpush-stale-view',
-    '03-async-validator-race',
-    '04-guard-redirect-loop',
-    '05-ionic-back-button',
-  ].map((slug) => ({
-    path: 'cases/' + slug,
+  {
+    path: 'cases/01-subscription-leak',
+    loadComponent: () => import('./cases/01-subscription-leak/case-01').then((m) => m.Case01),
+    title: 'Case 01 · Angular Bug Clinic',
+  },
+  {
+    path: 'cases/02-onpush-stale-view',
     loadComponent: () => import('./shared/planned-case').then((m) => m.PlannedCase),
-    data: { slug },
-    title: 'Case study · Angular Bug Clinic',
-  })),
+    data: { slug: '02-onpush-stale-view' },
+    title: 'Case 02 · Angular Bug Clinic',
+  },
+  {
+    path: 'cases/03-async-validator-race',
+    loadComponent: () => import('./shared/planned-case').then((m) => m.PlannedCase),
+    data: { slug: '03-async-validator-race' },
+    title: 'Case 03 · Angular Bug Clinic',
+  },
+  {
+    path: 'cases/04-guard-redirect-loop',
+    loadComponent: () => import('./shared/planned-case').then((m) => m.PlannedCase),
+    data: { slug: '04-guard-redirect-loop' },
+    title: 'Case 04 · Angular Bug Clinic',
+  },
+  {
+    path: 'cases/05-ionic-back-button',
+    loadComponent: () => import('./shared/planned-case').then((m) => m.PlannedCase),
+    data: { slug: '05-ionic-back-button' },
+    title: 'Case 05 · Angular Bug Clinic',
+  },
   { path: '**', redirectTo: '' },
 ];
