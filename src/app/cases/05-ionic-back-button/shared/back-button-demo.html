@@ -1,0 +1,83 @@
+<section class="demo-card back-button-demo stack">
+  <div class="row">
+    <span class="status">IONIC TASK PREVIEW</span>
+    <span class="muted">Navigation priority: {{ navigationPriority }}</span>
+  </div>
+
+  <div class="back-button-stage">
+    <div class="back-button-preview">
+      <p class="back-button-eyebrow">
+        {{ page() === 'Task details' ? 'MY TASKS / DETAILS' : 'MY TASKS' }}
+      </p>
+      <h2>{{ page() }}</h2>
+      @if (page() === 'Task details') {
+        <p class="back-button-task">Prepare the weekly checklist</p>
+        <p class="muted">A small task with a note waiting to be reviewed.</p>
+      } @else {
+        <p class="back-button-task">3 tasks ready for review</p>
+        <p class="danger">The underlying page has already moved.</p>
+      }
+      <div class="row">
+        <button type="button" (click)="openModal()">Open task notes</button>
+        <button type="button" class="secondary" [disabled]="dispatching()" (click)="pressBack()">
+          Simulate hardware back
+        </button>
+      </div>
+    </div>
+
+    <div class="back-button-metrics" aria-live="polite">
+      <div>
+        <span class="metric-label">Underlying page</span>
+        <strong data-testid="page-name">{{ page() }}</strong>
+      </div>
+      <div>
+        <span class="metric-label">Page navigations</span>
+        <strong class="metric" data-testid="navigation-count">{{ navigations() }}</strong>
+      </div>
+      <div>
+        <span class="metric-label">Task notes</span>
+        <strong data-testid="modal-state">{{ modalOpen() ? 'Open' : 'Closed' }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <p class="code-note" aria-live="polite">{{ outcome() }}</p>
+  <p class="muted">
+    The simulator sends Ionic's hardware-back event. Browser Back is a separate action.
+  </p>
+
+  <ion-modal
+    [isOpen]="modalOpen()"
+    [animated]="false"
+    cssClass="clinic-task-modal"
+    (didDismiss)="modalDismissed()"
+  >
+    <ng-template>
+      <section class="clinic-task-dialog">
+        <p class="back-button-eyebrow">TASK NOTES · IONIC MODAL</p>
+        <h2>Prepare the weekly checklist</h2>
+        <p>Review the notes before returning to the task.</p>
+        <div class="clinic-modal-observation" aria-live="polite">
+          <span class="metric-label">Page underneath this modal</span>
+          <strong data-testid="underlying-page">{{ page() }}</strong>
+          <span data-testid="underlying-count">{{ navigations() }} page navigations</span>
+        </div>
+        @if (navigations() > 0) {
+          <p class="danger">The page moved, but this modal is still open.</p>
+        } @else {
+          <p class="muted">
+            Expected: first back closes these notes; second back changes the page.
+          </p>
+        }
+        <div class="row">
+          <button type="button" [disabled]="dispatching()" (click)="pressBack()">
+            Simulate hardware back
+          </button>
+          <button type="button" class="secondary" (click)="modalOpen.set(false)">
+            Close notes
+          </button>
+        </div>
+      </section>
+    </ng-template>
+  </ion-modal>
+</section>

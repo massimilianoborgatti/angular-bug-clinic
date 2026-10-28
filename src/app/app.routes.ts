@@ -26,8 +26,8 @@ export const routes: Routes = [
   },
   {
     path: 'cases/05-ionic-back-button',
-    loadComponent: () => import('./shared/planned-case').then((m) => m.PlannedCase),
-    data: { slug: '05-ionic-back-button' },
+    loadChildren: () =>
+      import('./cases/05-ionic-back-button/case-05.routes').then((m) => m.CASE_05_ROUTES),
     title: 'Case 05 · Angular Bug Clinic',
   },
   { path: '**', redirectTo: '' },
