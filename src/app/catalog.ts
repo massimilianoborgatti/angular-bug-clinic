@@ -46,7 +46,7 @@ export const cases: ClinicCase[] = [
     cause: 'Independent subscriptions let stale responses overwrite the current validation state.',
     fix: 'Cancel obsolete work with switchMap and show a pending state.',
     takeaway: 'Only the latest request may update the current field.',
-    ready: false,
+    ready: true,
   },
   {
     id: '04',
