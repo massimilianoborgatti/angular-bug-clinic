@@ -14,8 +14,7 @@ export const routes: Routes = [
   },
   {
     path: 'cases/03-async-validator-race',
-    loadComponent: () => import('./shared/planned-case').then((m) => m.PlannedCase),
-    data: { slug: '03-async-validator-race' },
+    loadComponent: () => import('./cases/03-async-validator-race/case-03').then((m) => m.Case03),
     title: 'Case 03 · Angular Bug Clinic',
   },
   {

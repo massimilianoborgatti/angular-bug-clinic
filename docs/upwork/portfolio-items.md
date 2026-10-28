@@ -33,3 +33,19 @@ Publish-ready copy for the owner to use manually. Every example uses original, n
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)
 
 **Screenshots:** [Broken](../screenshots/02-broken.png) · [Fixed](../screenshots/02-fixed.png)
+
+## 03 — Async validator race
+
+**Title:** Angular bug fix: prevent stale async validation results
+
+**Role:** Developer
+
+**Description:** A slow username check overwrote a newer answer and marked an available name as taken. I reproduced the request race with controlled mock delays, replaced nested subscriptions with a debounced switchMap pipeline, and displayed pending feedback. Deterministic unit and browser tests prove that only the current username can decide the result.
+
+**Skills:** Angular, TypeScript, RxJS, Unit Testing, Bug Fix
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/src/app/cases/03-async-validator-race)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race)
+
+**Screenshots:** [Broken](../screenshots/03-broken.png) · [Fixed](../screenshots/03-fixed.png)

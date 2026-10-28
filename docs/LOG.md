@@ -21,3 +21,9 @@
 - Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
 - Local validation passed: lint, 10 unit contracts (including two expected Broken failures), 10 browser tests on dev and production Pages paths, and the production build. Both 1600 × 1200 screenshots were visually reviewed. Remote CI, merge and live deployment remain unverified.
 - Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
+
+## 2026-10-28 — Case 03: Async validator race
+
+- Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
+- Local validation passed: lint, 14 unit contracts (including three expected Broken failures), 13 browser tests on dev and production Pages paths, and the production build. Both 1600 × 1200 screenshots were visually reviewed. Controlled Vitest timers replace Zone-based fakeAsync, matching the Angular CLI default runner. Remote CI, merge and live deployment remain unverified.
+- Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
