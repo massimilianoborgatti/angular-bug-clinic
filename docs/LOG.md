@@ -2,50 +2,62 @@
 
 ## 2026-10-28 — Setup
 
-- Read the supplied specification and copied it to docs/SPEC.md.
-- Public profile API check: company, bio, location and public email fields are empty; no employer is named in those fields.
-- Verified GitHub account ID 82892095 and selected its no-reply commit email.
-- Generated Angular CLI 22.2.5 / Angular 22.2.3 with Node 24.22.1; created routes, the case library, MIT license, lint, Vitest, Playwright and CI / Pages workflows.
-- Hash routing preserves direct case URLs on static Pages hosting.
-- Local validation and remote setup are in progress. No merge, deployment or portfolio publication is claimed yet.
-- Next: complete setup PR, then integrate cases 01 to 05 in order, verifying CI and Pages after each merge.
+- Created the case library, five case routes, MIT license, and the shared demonstration layout.
+- Generated the application with Angular CLI 22.2.5, Angular 22.2.3, and Node.js 24.22.1.
+- Added ESLint, Prettier, the Angular CLI default Vitest runner, Playwright, and CI and Pages workflows.
+- Selected hash routing so direct case links and reloads work on a static deployment.
+- Checked the development server and the production build under the `/angular-bug-clinic/` base path.
 
 ## 2026-10-28 — Case 01: Subscription leak
 
-- Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
-- Local validation passed: lint, 6 unit contracts (including the expected Broken failure), 6 browser tests on both dev and production Pages paths. Two 1600 × 1200 screenshots were generated and visually reviewed. Remote CI, merge and live deployment remain unverified.
-- Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
+- Added a notification widget whose Broken subscription survives destruction and a Fixed implementation using `takeUntilDestroyed`.
+- Added the shared teardown invariant, explicit symptom checks, browser navigation coverage, the case write-up, two 1600 × 1200 screenshots, and a portfolio description.
+- Local validation passed with six unit contracts and six browser checks on development and production paths.
 
 ## 2026-10-28 — Case 02: OnPush stale view
 
-- Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
-- Local validation passed: lint, 10 unit contracts (including two expected Broken failures), 10 browser tests on dev and production Pages paths, and the production build. Both 1600 × 1200 screenshots were visually reviewed. Remote CI, merge and live deployment remain unverified.
-- Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
+- Demonstrated a parent array mutation that leaves an OnPush child stale, then repaired it with an immutable update.
+- Tested real parent button clicks and the child's rendered count and text, including repeated additions.
+- Added the case write-up, two 1600 × 1200 screenshots, and a portfolio description.
+- Local validation passed with ten unit contracts and ten browser checks on development and production paths.
 
 ## 2026-10-28 — Case 03: Async validator race
 
-- Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
-- Local validation passed: lint, 14 unit contracts (including three expected Broken failures), 13 browser tests on dev and production Pages paths, and the production build. Both 1600 × 1200 screenshots were visually reviewed. Controlled Vitest timers replace Zone-based fakeAsync, matching the Angular CLI default runner. Remote CI, merge and live deployment remain unverified.
-- Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
+- Reproduced an older username response overwriting the current result through independent subscriptions.
+- Added immediate cancellation with `switchMap`, a short debounce, pending feedback, and controlled mock delays.
+- Used Vitest fake timers for the unit regression, matching the default runner, and a controlled browser clock for the full replay before browser assertions. This checks the final stale response rather than a temporary successful state.
+- Added the case write-up, two 1600 × 1200 screenshots, and a portfolio description.
+- Local validation passed with 14 unit contracts and 13 browser checks on development and production paths.
 
 ## 2026-10-28 — Case 04: Guard redirect loop
 
-- Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
-- Local validation passed: lint, 25 unit contracts (including four expected Broken failures), 20 browser tests on dev and production Pages paths, and the production build. Both 1600 × 1200 screenshots were visually reviewed. A direct-login test caught and fixed the initial demo-session variant before authentication. Remote CI, merge and live deployment remain unverified.
-- Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
+- Reproduced the guarded-login loop with real Router navigation and a bounded demonstration stop.
+- Left Fixed login reachable, returned `UrlTree` redirects, and checked the return destination against the known task route.
+- Added RouterTestingHarness coverage for one login redirect, returning after login, and unsafe return targets.
+- Covered direct child navigation, reused parent routes, tab synchronization, and Back/Forward behavior in the browser.
+- Added the case write-up, two 1600 × 1200 screenshots, and a portfolio description.
 
 ## 2026-10-28 — Case 05: Ionic back button
 
-- Added original Broken / Fixed examples, the shared expected-failure invariant, passing symptom checks, the case write-up, and portfolio copy.
-- Local validation passed: lint, 32 unit contracts (including five expected Broken failures), 23 browser tests on dev and production Pages paths, and the strict production build. Both 1600 × 1200 screenshots were visually reviewed. Ionic stays in its lazy route; its required 12.4 kB core stylesheet uses a 14/16 kB per-style warning/error budget. Remote CI, merge and live deployment remain unverified.
-- Next: finish local checks, then publish the case PR after its predecessor is merged and verified.
+- Added a real Ionic modal and compared navigation-handler priorities above and below the overlay handler.
+- Verified overlay-first behavior, second-press navigation, and handler teardown with priority-dispatch unit tests and browser checks.
+- Kept Ionic Angular 9.0.10 in its lazy route and set an explicit size budget for its required core stylesheet.
+- Added the case write-up, two 1600 × 1200 screenshots, and a portfolio description.
 
-## 2026-10-28 — Final local verification
+## 2026-10-29 — Full verification
 
-- All five cases are implemented. Formatting, lint, 32 unit contracts (27 passing, five expected failures), 25 browser checks on both dev and production Pages paths, and the strict production build pass.
-- The final review added route/tab synchronization for reused case 04 parents, with hash navigation and Back/Forward regressions. Ten 1600 x 1200 portfolio screenshots are available.
-- The setup branch also passed its own strict lint, unit, browser and Pages checks. Official CI actions are pinned to verified current release commits; deployment accepts successful same-repository main push CI only.
-- All local commit authors and committers use the verified GitHub no-reply email. No remote is configured and no public repository, PR, remote CI result, merge, Pages deployment or Upwork publication is claimed.
-- GitHub is connected in the app. GitHub CLI device login was not completed before its code expired; a fresh login with workflow permission is the next dependency for repository creation and pushing local commits.
-- Local dependencies were propagated with history-preserving merge commits. No history rewrite or cleanup deletion was performed.
-- Next: authenticate the CLI, create the public MIT repository, publish the setup PR, then publish cases 01 to 05 one at a time. Merge only after green CI and verify live Pages after each merge. Notify the owner after 01 and 02 are live. Synced Drive files remain untouched.
+- Formatting, lint, 32 unit contracts (27 passing and five expected failures), 25 browser checks on both development and production Pages paths, and the strict production build passed.
+- Ten 1600 × 1200 screenshots were generated and visually reviewed.
+- CI uses pinned action revisions. Deployment accepts successful main-branch push CI from the same repository.
+- Setup and the five cases were integrated through separate pull requests, with CI and the published case routes checked in sequence.
+
+## 2026-10-29 — Modal navigation cleanup
+
+- Awaited Ionic modal dismissal in a route guard before destroying the view, including navigation during presentation.
+- Added browser coverage for early and visible-modal exits, Back/Forward navigation, overlay removal, scroll unlock, and page errors.
+- The route-exit regression passed ten repeated production-path checks and the full development and production suites.
+
+## 2026-10-29 — Documentation
+
+- Added the project overview and neutral contributor guidance, updated documentation links, and retained the technical progress history.
+- Kept the five portfolio descriptions and ten screenshots alongside their case write-ups.

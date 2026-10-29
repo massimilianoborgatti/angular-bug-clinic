@@ -1,14 +1,15 @@
-# Contributor instructions
+# Contributor guide
 
-Read [docs/SPEC.md](docs/SPEC.md) before making changes. It defines the five cases and the delivery order.
+Read [docs/OVERVIEW.md](docs/OVERVIEW.md) before making changes.
 
-- Write every example from scratch. Do not use code, names, data, screenshots, architecture, or patterns from an employer or client.
-- Use a neutral tasks and notifications domain.
-- No AI features, backend, secrets, or real APIs. Use in-memory data and mock delays.
-- All code, comments, documentation, and commit messages must be English.
-- Git author and committer: Massimiliano Borgatti, 82892095+massimilianoborgatti@users.noreply.github.com. Do not use a work email.
-- Keep the source in C:\Workspace\angular-bug-clinic, outside synced storage.
-- Before pushing, run lint, unit tests, Playwright, and the production Pages build.
-- One PR per case, in order after setup. Merge only after green CI; then verify the deployed demo.
-- Keep Broken and Fixed close enough to compare. Intentional failing invariants must be expected failures, with explicit symptom checks and a passing Fixed counterpart.
-- Log progress in docs/LOG.md. Do not publish the portfolio on Upwork.
+- Use a neutral tasks and notifications domain with in-memory mock data and artificial delays.
+- Add no backend, secrets, or real external APIs.
+- Use standalone Angular components, signals where appropriate, strict TypeScript, and built-in control flow.
+- Keep all code, comments, documentation, and commit messages in English.
+- Keep Broken and Fixed implementations minimal and comparable. Shared code should make the focused repair easy to see.
+- Test the same desired invariant against both versions. Broken is an expected failure with a separate explicit symptom check; Fixed passes normally. An unexpected Broken pass must fail the suite.
+- Use controlled clocks or mock delays for asynchronous regressions. Avoid timing-dependent assertions.
+- Update the case README with the symptom, reproduction, root cause, fix, test evidence, and takeaway.
+- Before pushing, run `npm run format:check`, `npm run verify`, and `npm run e2e:pages`.
+- Use one pull request per change and conventional commit messages. Merge only with green CI, then verify the deployed demo.
+- Log useful technical progress and validation results in [docs/LOG.md](docs/LOG.md).
