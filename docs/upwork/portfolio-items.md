@@ -1,6 +1,6 @@
-# Upwork portfolio items
+# Portfolio items
 
-Publish-ready copy for the owner to use manually. Every example uses original, neutral mock data.
+Portfolio copy for each case
 
 ## 01 — Subscription leak
 

@@ -12,6 +12,6 @@
 
 **The fix:** The [case pull request](https://github.com/massimilianoborgatti/angular-bug-clinic/pull/3) replaces the array with an immutable update. The child receives a new reference, so Angular refreshes its count and task list. A parent-owned signal updated with a fresh array is another suitable state-management option; mutating an array and returning the same reference is insufficient.
 
-**How it's tested:** One unit contract clicks the real parent button and checks the child's rendered count and text. It runs as an expected failure for Broken and passes for Fixed. Additional tests confirm reference identity and repeated additions. Playwright verifies the same behavior in a browser without forcing a child refresh.
+**How it's tested:** One unit contract clicks the real parent button and checks the child's rendered count and text. It runs as an expected failure for Broken and passes for Fixed. Additional tests confirm the array reference and repeated additions. Playwright verifies the same behavior in a browser without forcing a child refresh.
 
 **Takeaway:** When an OnPush component receives an updated collection, give it a new collection reference.

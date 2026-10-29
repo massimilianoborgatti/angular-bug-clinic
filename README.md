@@ -44,7 +44,7 @@ Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), Rx
 
 ## Portfolio material
 
-Case PRs add two 1600 × 1200 screenshots each and entries to [the portfolio copy](docs/upwork/portfolio-items.md). Publishing on Upwork is a manual owner step. [Specification](docs/SPEC.md) · [Progress log](docs/LOG.md).
+Ten [1600 × 1200 screenshots](docs/screenshots/) and five portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
 
 ## License
 
