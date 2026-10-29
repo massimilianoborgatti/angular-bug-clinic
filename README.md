@@ -6,13 +6,13 @@ A collection of real-world Angular/Ionic bugs, each with a broken version, a fix
 
 ## Cases
 
-| Case                      | Write-up                                                | Demo                                                                                              | Pull request                                                                 |
-| ------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| 01 — Subscription leak    | [Read](src/app/cases/01-subscription-leak/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/01-subscription-leak)    | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pull/2) |
-| 02 — OnPush stale view    | [Read](src/app/cases/02-onpush-stale-view/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)    | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pull/3) |
-| 03 — Async validator race | [Read](src/app/cases/03-async-validator-race/README.md) | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race) | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pull/4) |
-| 04 — Guard redirect loop  | [Read](src/app/cases/04-guard-redirect-loop/README.md)  | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)  | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pull/6) |
-| 05 — Ionic back button    | [Read](src/app/cases/05-ionic-back-button/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | [Case PR](https://github.com/massimilianoborgatti/angular-bug-clinic/pull/7) |
+| Case                      | Write-up                                                | Demo                                                                                              | Code changes                                                                                                |
+| ------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| 01 — Subscription leak    | [Read](src/app/cases/01-subscription-leak/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/01-subscription-leak)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/f99122abe33b...66ddd5df9401) |
+| 02 — OnPush stale view    | [Read](src/app/cases/02-onpush-stale-view/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/66ddd5df9401...e7dc28931144) |
+| 03 — Async validator race | [Read](src/app/cases/03-async-validator-race/README.md) | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race) | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/e7dc28931144...fd0ac843fca6) |
+| 04 — Guard redirect loop  | [Read](src/app/cases/04-guard-redirect-loop/README.md)  | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)  | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c6040243cde7...c1d255ca08e7) |
+| 05 — Ionic back button    | [Read](src/app/cases/05-ionic-back-button/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c1d255ca08e7...34af5bd11a04) |
 
 ## Run locally
 
