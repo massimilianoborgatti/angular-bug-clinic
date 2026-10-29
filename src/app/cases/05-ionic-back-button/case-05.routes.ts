@@ -16,6 +16,7 @@ export const CASE_05_ROUTES: Routes = [
   {
     path: '',
     component: Case05,
+    canDeactivate: [(component: Case05) => component.beforeLeave()],
     providers: [
       provideIonicAngular(ionicConfig),
       provideEnvironmentInitializer(() => {
