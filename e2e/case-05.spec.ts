@@ -96,7 +96,9 @@ for (const viewport of [
       for (const variant of ['Broken', 'Fixed'] as const) {
         await page.goto('./#/cases/05-ionic-back-button');
         await page.getByRole('tab', { name: variant, exact: true }).click();
-        const open = page.getByRole('button', { name: 'Open task notes', exact: true });
+        const panel = page.getByRole('tabpanel', { name: variant, exact: true });
+        await expect(panel).toBeVisible();
+        const open = panel.getByRole('button', { name: 'Open task notes', exact: true });
         await open.scrollIntoViewIfNeeded();
         expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
         await open.click();
