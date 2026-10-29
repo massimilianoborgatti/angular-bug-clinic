@@ -83,3 +83,45 @@ test('case 05: browser Back releases an open modal and the case can be revisited
     }
   }
 });
+
+for (const viewport of [
+  { width: 390, height: 844 },
+  { width: 320, height: 568 },
+  { width: 844, height: 320 },
+]) {
+  test(
+    'case 05: modal remains usable after scrolling at ' + viewport.width + 'x' + viewport.height,
+    async ({ page }) => {
+      await page.setViewportSize(viewport);
+      for (const variant of ['Broken', 'Fixed'] as const) {
+        await page.goto('./#/cases/05-ionic-back-button');
+        await page.getByRole('tab', { name: variant, exact: true }).click();
+        const open = page.getByRole('button', { name: 'Open task notes', exact: true });
+        await open.scrollIntoViewIfNeeded();
+        expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+        await open.click();
+
+        const modal = page.locator('ion-modal');
+        const content = modal.locator('.modal-wrapper');
+        await expect(
+          modal.getByRole('heading', { name: 'Prepare the weekly checklist' }),
+        ).toBeInViewport({ ratio: 1 });
+        const bounds = await content.boundingBox();
+        expect(bounds).not.toBeNull();
+        expect(bounds!.x).toBeGreaterThanOrEqual(0);
+        expect(bounds!.y).toBeGreaterThanOrEqual(0);
+        expect(bounds!.x + bounds!.width).toBeLessThanOrEqual(viewport.width);
+        expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(viewport.height);
+
+        // A short viewport needs user scrolling to reach all actions.
+        await content.hover();
+        await page.mouse.wheel(0, viewport.height);
+        const close = modal.getByRole('button', { name: 'Close notes', exact: true });
+        await expect(close).toBeInViewport({ ratio: 1 });
+        await close.click();
+        await expect(modal).not.toBeVisible();
+        await expect(page.locator('body')).not.toHaveClass(/backdrop-no-scroll/);
+      }
+    },
+  );
+}
