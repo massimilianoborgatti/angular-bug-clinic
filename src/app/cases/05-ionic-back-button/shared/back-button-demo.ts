@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
-import { Directive, inject, OnDestroy, signal } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { Directive, inject, OnDestroy, signal, viewChild } from '@angular/core';
+import { IonModal, Platform } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { dispatchIonicBack } from './dispatch-ionic-back';
 
@@ -9,6 +9,7 @@ export abstract class BackButtonDemo implements OnDestroy {
   private readonly platform = inject(Platform);
   private readonly document = inject(DOCUMENT);
   private readonly navigation: Subscription;
+  private readonly modal = viewChild(IonModal);
 
   readonly page = signal('Task details');
   readonly navigations = signal(0);
@@ -46,6 +47,10 @@ export abstract class BackButtonDemo implements OnDestroy {
     } finally {
       this.dispatching.set(false);
     }
+  }
+
+  async dismissBeforeLeave(): Promise<void> {
+    await this.modal()?.dismiss(undefined, 'navigation');
   }
 
   ngOnDestroy(): void {
