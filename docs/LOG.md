@@ -61,3 +61,9 @@
 
 - Added the project overview and neutral contributor guidance, updated documentation links, and retained the technical progress history.
 - Kept the five portfolio descriptions and ten screenshots alongside their case write-ups.
+
+## 2026-10-29 — Modal on small screens
+
+- Anchored the case 05 modal to the viewport so document scrolling cannot move it off screen.
+- Allowed modal content to scroll when a short viewport cannot fit all actions.
+- Added browser coverage for both variants at 390 × 844, 320 × 568, and 844 × 320, including opening after document scrolling and reaching Close notes.
