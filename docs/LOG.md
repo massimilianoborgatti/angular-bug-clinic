@@ -67,3 +67,13 @@
 - Anchored the case 05 modal to the viewport so document scrolling cannot move it off screen.
 - Allowed modal content to scroll when a short viewport cannot fit all actions.
 - Added browser coverage for both variants at 390 × 844, 320 × 568, and 844 × 320, including opening after document scrolling and reaching Close notes.
+
+## 2026-10-30 — Case 06: React effect loop
+
+- Added an independent Next.js static export with shared mock orders and matching Broken and Fixed views.
+- Reproduced repeated requests and stale filter results, then repaired effect dependencies and ignored obsolete responses during cleanup.
+- Verified eight unit contracts, including two expected Broken failures, and six static browser checks, including two expected Broken failures. Covered search, loading feedback, keyboard tabs, narrow screens, and Strict Mode cleanup.
+- Added the home card, a separate React CI job, combined Pages output, and a browser check for navigation between both apps and all five Angular case URLs.
+- Formatting, lint, type checking, both production builds, all 32 Angular unit contracts, and all 28 Angular browser checks on development and production passed locally.
+- Added the write-up, two reviewed 1600 × 1200 screenshots, and the sixth portfolio description. Existing case implementations and screenshots are unchanged.
+- Next: run remote CI and verify the published React route and existing case routes after integration.

@@ -19,8 +19,9 @@ http
         res.writeHead(404);
         return res.end();
       }
-      const relative =
+      let relative =
         decodeURIComponent(url.pathname.slice('/angular-bug-clinic/'.length)) || 'index.html';
+      if (relative.endsWith('/')) relative += 'index.html';
       const path = resolve(root, relative);
       if (!path.startsWith(root + sep)) throw new Error('Invalid path');
       const data = await readFile(path);
