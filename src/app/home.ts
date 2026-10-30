@@ -9,8 +9,8 @@ import { cases } from './catalog';
         <p class="eyebrow"><span class="tiny-cross">+</span> THE DEBUGGING NOTEBOOK</p>
         <h1>Find the bug.<br />Understand the <em>fix.</em></h1>
         <p class="hero-copy">
-          Five small Angular &amp; Ionic case studies.<br />Real symptoms, focused fixes, and tests
-          that prove the difference.
+          Six small Angular, Ionic &amp; React case studies.<br />Real symptoms, focused fixes, and
+          tests that prove the difference.
         </p>
         <a class="button primary" [routerLink]="['/cases', cases[0].slug]"
           >Explore the first case <span aria-hidden="true">↗</span></a
@@ -42,7 +42,7 @@ import { cases } from './catalog';
           <p class="eyebrow">THE CASE LIBRARY</p>
           <h2>Little details. Noticeable consequences.</h2>
         </div>
-        <span class="case-total">05 cases / one clear approach</span>
+        <span class="case-total">06 cases / one clear approach</span>
       </div>
       <div class="case-grid">
         @for (item of cases; track item.id) {
@@ -59,6 +59,19 @@ import { cases } from './catalog';
             </div></a
           >
         }
+        <a class="case-card" href="react/">
+          <div class="card-top">
+            <span class="case-number">CASE 06</span><span class="tag">React · Next.js</span>
+          </div>
+          <h3>The effect that never stopped</h3>
+          <p>
+            A changing dependency keeps requests running, and an old response replaces the latest
+            filter.
+          </p>
+          <div class="card-bottom">
+            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
+          </div>
+        </a>
       </div>
     </section>`,
 })
