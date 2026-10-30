@@ -81,3 +81,19 @@ Portfolio copy for each case
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)
 
 **Screenshots:** [Broken](../screenshots/05-broken.png) · [Fixed](../screenshots/05-fixed.png)
+
+## 06 — React effect loop
+
+**Title:** React bug fix: stop a useEffect request loop and stale results
+
+**Role:** Developer
+
+**Description:** An orders page kept requesting data while idle, and fast filter changes showed stale results. I traced the loop to an object recreated in a useEffect dependency and the stale list to missing cleanup. Primitive dependencies stop repeated requests, while an ignore flag prevents obsolete responses from changing the view. Controlled unit and static-build browser tests demonstrate both bugs and prove the repair in a React and Next.js demo.
+
+**Skills:** React, Next.js, TypeScript, Unit Testing, Bug Fix
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/)
+
+**Screenshots:** [Broken](../screenshots/06-broken.png) · [Fixed](../screenshots/06-fixed.png)

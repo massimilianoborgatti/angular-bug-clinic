@@ -7,3 +7,12 @@ test-results/
 .env*
 *.log
 .DS_Store
+
+react/node_modules/
+react/.next/
+react/out/
+react/next-env.d.ts
+react/coverage/
+react/test-results/
+react/playwright-report/
+react/tsconfig.tsbuildinfo
