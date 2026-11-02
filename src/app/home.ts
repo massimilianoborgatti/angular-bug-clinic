@@ -9,8 +9,8 @@ import { cases } from './catalog';
         <p class="eyebrow"><span class="tiny-cross">+</span> THE DEBUGGING NOTEBOOK</p>
         <h1>Find the bug.<br />Understand the <em>fix.</em></h1>
         <p class="hero-copy">
-          Eight small Angular, Ionic &amp; React case studies.<br />Real symptoms, focused fixes,
-          and tests that prove the difference.
+          Nine small Angular, Ionic &amp; React case studies.<br />Real symptoms, focused fixes, and
+          tests that prove the difference.
         </p>
         <a class="button primary" [routerLink]="['/cases', cases[0].slug]"
           >Explore the first case <span aria-hidden="true">↗</span></a
@@ -42,7 +42,7 @@ import { cases } from './catalog';
           <p class="eyebrow">THE CASE LIBRARY</p>
           <h2>Little details. Noticeable consequences.</h2>
         </div>
-        <span class="case-total">08 cases / one clear approach</span>
+        <span class="case-total">09 cases / one clear approach</span>
       </div>
       <div class="case-grid">
         @for (item of cases; track item.id) {
@@ -68,6 +68,16 @@ import { cases } from './catalog';
             A changing dependency keeps requests running, and an old response replaces the latest
             filter.
           </p>
+          <div class="card-bottom">
+            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
+          </div>
+        </a>
+        <a class="case-card" href="react/cases/07-node-refresh-race/">
+          <div class="card-top">
+            <span class="case-number">CASE 07</span><span class="tag">React · Node.js</span>
+          </div>
+          <h3>Logged out at random</h3>
+          <p>Three expired requests race to refresh one session and revoke it.</p>
           <div class="card-bottom">
             <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
           </div>
