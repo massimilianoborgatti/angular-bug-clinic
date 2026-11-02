@@ -98,6 +98,22 @@ Portfolio copy for each case
 
 **Screenshots:** [Broken](../screenshots/06-broken.png) · [Fixed](../screenshots/06-fixed.png)
 
+## 07 — Refresh token race
+
+**Title:** Node.js + React fix: stop random logouts from a token refresh race
+
+**Role:** Developer
+
+**Description:** A task dashboard logged users out when three expired requests refreshed the same rotating token. I traced the race across a Node.js/Express API and React client. Sharing one refresh promise stops token reuse while preserving strict server-side revocation. API tests cover rotation, expiry and reuse; React and browser tests show Broken losing its session and Fixed loading all three task lists with one refresh. The live demo uses the same token logic through an in-browser mock.
+
+**Skills:** Node.js, React, TypeScript, Unit Testing, Bug Fix
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/07-node-refresh-race)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/07-node-refresh-race/)
+
+**Screenshots:** [Broken](../screenshots/07-broken.png) · [Fixed](../screenshots/07-fixed.png)
+
 ## 08 — Keyboard-safe modal dialog
 
 **Title:** Angular accessibility fix: keyboard-safe modal dialog (WCAG 2.2)
