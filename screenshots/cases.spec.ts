@@ -47,6 +47,14 @@ for (const item of cases.filter((item) => item.ready)) {
           ).not.toBeVisible();
         else await expect(modal.getByTestId('underlying-page')).toHaveText('Task list');
       }
+      if (item.id === '08') {
+        const trigger = page.getByRole('button', { name: 'Edit contact', exact: true });
+        await trigger.focus();
+        await page.keyboard.press('Enter');
+        await expect(page.getByTestId('contact-dialog')).toBeVisible();
+        if (variant === 'Fixed')
+          await expect(page.getByLabel('Name', { exact: true })).toBeFocused();
+      }
       await page.screenshot({
         path: 'docs/screenshots/' + item.id + '-' + variant.toLowerCase() + '.png',
         fullPage: false,
