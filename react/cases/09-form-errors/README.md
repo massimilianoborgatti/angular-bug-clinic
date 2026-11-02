@@ -1,5 +1,3 @@
-<!-- NVDA: to be verified -->
-
 # 09 — The form errors nobody heard
 
 ## Symptom
@@ -28,7 +26,7 @@ The same label, error-focus and success contracts fail as expected on Broken and
 
 ## Manual check with NVDA
 
-**Pending; not run.** In a desktop Chromium browser with NVDA, select Fixed and submit empty fields using Tab and Enter. Expect the summary heading, three error links, then Email (required), invalid entry and its error description when following that link. Complete the form; expect the subscription success status. Broken may announce placeholders, an unnamed checkbox and plain Subscribe text, without linked errors or keyboard activation. Verify actual announcements and reading order.
+Verified manually with NVDA on Windows in a desktop Chromium browser (November 2026). Submitting empty fields with Tab and Enter in Fixed announces the summary heading and three error links. Following the Email link announces the required field, invalid state and error description. Completing the form announces success. Broken announces placeholders, an unnamed checkbox and plain Subscribe text without linked errors or keyboard activation. Exact wording depends on settings.
 
 ## Takeaway
 
