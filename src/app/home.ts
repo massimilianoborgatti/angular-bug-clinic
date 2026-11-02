@@ -9,8 +9,8 @@ import { cases } from './catalog';
         <p class="eyebrow"><span class="tiny-cross">+</span> THE DEBUGGING NOTEBOOK</p>
         <h1>Find the bug.<br />Understand the <em>fix.</em></h1>
         <p class="hero-copy">
-          Six small Angular, Ionic &amp; React case studies.<br />Real symptoms, focused fixes, and
-          tests that prove the difference.
+          Eight small Angular, Ionic &amp; React case studies.<br />Real symptoms, focused fixes,
+          and tests that prove the difference.
         </p>
         <a class="button primary" [routerLink]="['/cases', cases[0].slug]"
           >Explore the first case <span aria-hidden="true">↗</span></a
@@ -42,7 +42,7 @@ import { cases } from './catalog';
           <p class="eyebrow">THE CASE LIBRARY</p>
           <h2>Little details. Noticeable consequences.</h2>
         </div>
-        <span class="case-total">06 cases / one clear approach</span>
+        <span class="case-total">08 cases / one clear approach</span>
       </div>
       <div class="case-grid">
         @for (item of cases; track item.id) {
@@ -72,9 +72,31 @@ import { cases } from './catalog';
             <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
           </div>
         </a>
+        <a class="case-card" routerLink="/cases/08-keyboard-dialog"
+          ><div class="card-top">
+            <span class="case-number">CASE 08</span><span class="tag">Angular · Accessibility</span>
+          </div>
+          <h3>The dialog that keyboard users couldn't leave</h3>
+          <p>A contact editor leaves keyboard focus under an overlay.</p>
+          <div class="card-bottom">
+            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
+          </div></a
+        >
+        <a class="case-card" href="react/cases/09-form-errors/"
+          ><div class="card-top">
+            <span class="case-number">CASE 09</span><span class="tag">React · Accessibility</span>
+          </div>
+          <h3>The form errors nobody heard</h3>
+          <p>
+            Validation errors appear on screen without names, descriptions or a focus destination.
+          </p>
+          <div class="card-bottom">
+            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
+          </div></a
+        >
       </div>
     </section>`,
 })
 export class Home {
-  readonly cases = cases;
+  readonly cases = cases.filter((item) => item.id !== '08');
 }

@@ -97,3 +97,35 @@ Portfolio copy for each case
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/)
 
 **Screenshots:** [Broken](../screenshots/06-broken.png) · [Fixed](../screenshots/06-fixed.png)
+
+## 08 — Keyboard-safe modal dialog
+
+**Title:** Angular accessibility fix: keyboard-safe modal dialog (WCAG 2.2)
+
+**Role:** Developer
+
+**Description:** A contact editor kept keyboard focus behind an overlay and lost its return point. I mapped the defects to WCAG 2.2 Keyboard, Focus Order and Name, Role, Value, then used a named native dialog with initial focus, Tab containment and keyboard close actions. Unit contracts, keyboard browser tests and axe-core demonstrate Broken and verify Fixed. Verified manually with NVDA.
+
+**Skills:** Web Accessibility, Accessibility Testing, Angular, TypeScript, Web Content Accessibility Guidelines
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/src/app/cases/08-keyboard-dialog)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/08-keyboard-dialog)
+
+**Screenshots:** [Broken](../screenshots/08-broken.png) · [Fixed](../screenshots/08-fixed.png)
+
+## 09 — Form errors and announcements
+
+**Title:** React accessibility fix: form errors screen readers can hear
+
+**Role:** Developer
+
+**Description:** A sign-up form displayed red errors without accessible labels, descriptions or a useful focus destination. I mapped the failures to WCAG 2.2 relationships, error identification, labels and status messages. Explicit labels, linked errors, a focused summary and a polite success region repair the flow. Unit tests, keyboard browser checks and axe-core compare Broken with Fixed. Verified manually with NVDA.
+
+**Skills:** Web Accessibility, Accessibility Testing, React, TypeScript, Web Content Accessibility Guidelines
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/09-form-errors)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/09-form-errors/)
+
+**Screenshots:** [Broken](../screenshots/09-broken.png) · [Fixed](../screenshots/09-fixed.png)
