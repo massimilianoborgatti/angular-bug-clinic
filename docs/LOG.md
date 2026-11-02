@@ -77,3 +77,13 @@
 - Formatting, lint, type checking, both production builds, all 32 Angular unit contracts, and all 28 Angular browser checks on development and production passed locally.
 - Added the write-up, two reviewed 1600 × 1200 screenshots, and the sixth portfolio description. Existing case implementations and screenshots are unchanged.
 - Next: run remote CI and verify the published React route and existing case routes after integration.
+
+## 2026-11-02 — Cases 08 and 09: Accessibility repairs
+
+- Added a Contacts dialog comparing a hand-made overlay with a named native dialog, initial focus, Tab/Shift+Tab containment, Escape handling and trigger-focus restoration.
+- Added a separate React sign-up route comparing visual-only errors with explicit labels, error descriptions, a focused summary, keyboard submission and a polite success region. Kept interactive targets at least 24 pixels in the repaired form.
+- Added expected-failure contracts and explicit Broken symptom checks, plus axe-core scans of the open editor and invalid form. Fixed scans report no serious or critical findings in those scopes.
+- Verified 42 Angular unit contracts, 35 development browser checks and 35 production-path browser checks; verified 16 React unit contracts, 12 static browser checks and combined-site navigation across existing and new routes. Both production builds, formatting, lint and type checking passed.
+- Validated the React browser suite with two workers, matching CI. An earlier concurrent run encountered the existing case 06 clock initialization race; its source and tests are unchanged.
+- Added two WCAG-mapped write-ups, four visually checked 1600 × 1200 screenshots and two portfolio entries. Both NVDA sections are marked to be verified; no manual screen-reader test has been performed.
+- Next: complete the two manual NVDA checklists, then run remote CI and verify the published case URLs after integration.

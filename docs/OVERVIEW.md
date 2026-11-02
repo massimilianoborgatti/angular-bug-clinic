@@ -12,7 +12,7 @@ Every case includes a regression test for the desired behavior. The same invaria
 
 The case README explains the symptom, gives a short reproduction, identifies the root cause, describes the fix, links to the relevant change, and explains how it is tested. It ends with a takeaway that applies beyond the example.
 
-## The six cases
+## The eight cases
 
 1. [Subscription leak](../src/app/cases/01-subscription-leak/README.md): leaving and reopening a notification widget multiplies its listeners → tie the subscription to component destruction with `takeUntilDestroyed`.
 2. [OnPush stale view](../src/app/cases/02-onpush-stale-view/README.md): a parent changes a task array but the child keeps the old count → replace the array instead of mutating it in place.
@@ -20,6 +20,9 @@ The case README explains the symptom, gives a short reproduction, identifies the
 4. [Guard redirect loop](../src/app/cases/04-guard-redirect-loop/README.md): a guest is redirected to a login route protected by the same guard → leave login reachable, return a `UrlTree`, and check the return destination.
 5. [Ionic back button](../src/app/cases/05-ionic-back-button/README.md): a back handler moves the page underneath an open modal → respect overlay priorities and release the navigation handler on destruction.
 6. [React effect loop](../react/README.md): an unstable effect dependency repeats requests and obsolete responses replace current results → use primitive dependencies and ignore stale responses during cleanup.
+
+7. [08 — Keyboard-safe dialog](../src/app/cases/08-keyboard-dialog/README.md): an overlay loses keyboard entry and exit → use a named native dialog and restore focus.
+8. [09 — Accessible form errors](../react/cases/09-form-errors/README.md): visual errors lack names and relationships → add labels, error descriptions, a focused summary and live completion feedback.
 
 ## Stack and tooling
 
