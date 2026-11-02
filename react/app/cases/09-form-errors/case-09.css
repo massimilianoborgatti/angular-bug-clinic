@@ -1,0 +1,133 @@
+.signup-demo {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fcfdf9;
+}
+.signup-demo h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.signup-intro {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #53614f;
+}
+.signup-demo form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+}
+.signup-field {
+  width: 100%;
+}
+.signup-field > label {
+  display: block;
+  margin-bottom: 6px;
+}
+.signup-field > input {
+  width: 100%;
+  padding: 9px;
+}
+.signup-field .invalid {
+  border: 2px solid #a34835;
+}
+.terms-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+.terms-row input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+.terms-row label {
+  font-size: 12px;
+}
+.field-error {
+  color: #993c2c;
+  font-size: 12px;
+  line-height: 1.5;
+  margin: 6px 0 0;
+}
+.broken-submit {
+  background: var(--forest);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 7px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.required-note {
+  font-size: 12px;
+  margin: 0;
+}
+.error-summary {
+  padding: 14px;
+  border: 2px solid #a34835;
+  border-radius: 7px;
+  background: #fff8f4;
+  margin: 12px 0;
+}
+.error-summary h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+.error-summary p,
+.error-summary li {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.error-summary ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+}
+.error-summary a {
+  color: #873c2b;
+}
+.signup-demo :focus-visible,
+.error-summary:focus {
+  outline: 3px solid #436d48;
+  outline-offset: 4px;
+}
+.signup-success {
+  font-size: 13px;
+  color: #365c32;
+  margin: 18px 0 0;
+}
+@media (max-width: 480px) {
+  .signup-demo {
+    padding: 16px;
+  }
+}
+
+.signup-fixed .terms-row input {
+  width: 24px;
+  height: 24px;
+}
+.signup-fixed .terms-row label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}
+.error-summary a {
+  display: inline-block;
+  min-height: 24px;
+  padding: 3px 0;
+}
+
+.signup-intro {
+  margin-bottom: 12px;
+}
+.error-summary p {
+  margin-bottom: 0;
+}
+.error-summary ul {
+  margin-top: 6px;
+}
+.signup-success:empty {
+  margin: 0;
+}
