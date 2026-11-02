@@ -6,16 +6,17 @@ A collection of real-world Angular, Ionic and React bugs, each with a broken ver
 
 ## Cases
 
-| Case                        | Write-up                                                | Demo                                                                                              | Code changes                                                                                                            |
-| --------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| 01 — Subscription leak      | [Read](src/app/cases/01-subscription-leak/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/01-subscription-leak)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/f99122abe33b...66ddd5df9401)             |
-| 02 — OnPush stale view      | [Read](src/app/cases/02-onpush-stale-view/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/66ddd5df9401...e7dc28931144)             |
-| 03 — Async validator race   | [Read](src/app/cases/03-async-validator-race/README.md) | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race) | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/e7dc28931144...fd0ac843fca6)             |
-| 04 — Guard redirect loop    | [Read](src/app/cases/04-guard-redirect-loop/README.md)  | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)  | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c6040243cde7...c1d255ca08e7)             |
-| 05 — Ionic back button      | [Read](src/app/cases/05-ionic-back-button/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c1d255ca08e7...34af5bd11a04)             |
-| 06 — React effect loop      | [Read](react/README.md)                                 | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/)                          | [Broken](react/src/broken-orders.tsx) → [Fixed](react/src/fixed-orders.tsx)                                             |
-| 08 — Keyboard-safe dialog   | [Read](src/app/cases/08-keyboard-dialog/README.md)      | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/08-keyboard-dialog)      | [Broken](src/app/cases/08-keyboard-dialog/broken-dialog.ts) → [Fixed](src/app/cases/08-keyboard-dialog/fixed-dialog.ts) |
-| 09 — Accessible form errors | [Read](react/cases/09-form-errors/README.md)            | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/09-form-errors/)     | [Shared form (Broken/Fixed)](react/src/signup-form.tsx)                                                                 |
+| Case                        | Write-up                                                | Demo                                                                                                | Code changes                                                                                                            |
+| --------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 01 — Subscription leak      | [Read](src/app/cases/01-subscription-leak/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/01-subscription-leak)      | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/f99122abe33b...66ddd5df9401)             |
+| 02 — OnPush stale view      | [Read](src/app/cases/02-onpush-stale-view/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)      | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/66ddd5df9401...e7dc28931144)             |
+| 03 — Async validator race   | [Read](src/app/cases/03-async-validator-race/README.md) | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race)   | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/e7dc28931144...fd0ac843fca6)             |
+| 04 — Guard redirect loop    | [Read](src/app/cases/04-guard-redirect-loop/README.md)  | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c6040243cde7...c1d255ca08e7)             |
+| 05 — Ionic back button      | [Read](src/app/cases/05-ionic-back-button/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)      | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c1d255ca08e7...34af5bd11a04)             |
+| 06 — React effect loop      | [Read](react/README.md)                                 | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/)                            | [Broken](react/src/broken-orders.tsx) → [Fixed](react/src/fixed-orders.tsx)                                             |
+| 07 — Refresh token race     | [Read](react/cases/07-node-refresh-race/README.md)      | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/07-node-refresh-race/) | [Broken](react/src/refresh/broken-refresh.ts) → [Fixed](react/src/refresh/fixed-refresh.ts)                             |
+| 08 — Keyboard-safe dialog   | [Read](src/app/cases/08-keyboard-dialog/README.md)      | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/08-keyboard-dialog)        | [Broken](src/app/cases/08-keyboard-dialog/broken-dialog.ts) → [Fixed](src/app/cases/08-keyboard-dialog/fixed-dialog.ts) |
+| 09 — Accessible form errors | [Read](react/cases/09-form-errors/README.md)            | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/09-form-errors/)       | [Shared form (Broken/Fixed)](react/src/signup-form.tsx)                                                                 |
 
 Accessibility: targeted WCAG 2.2 repairs verified with keyboard contracts, axe-core checks and a manual NVDA pass.
 
@@ -31,9 +32,9 @@ npm start
 
 Open http://127.0.0.1:4200. Hash routing supports direct case links and reloads on GitHub Pages without a backend or redirect workaround.
 
-### React case
+### React cases
 
-The React case is an independent Next.js static app with its own lockfile.
+The React cases share an independent Next.js static app with its own lockfile.
 
 ```sh
 cd react
@@ -43,6 +44,19 @@ npm run dev
 ```
 
 Open http://127.0.0.1:3000/angular-bug-clinic/react/. For the production demo, run `npm run build` and `npm run preview`, then open http://127.0.0.1:4400/angular-bug-clinic/react/. Development Strict Mode performs an extra effect setup; the production preview shows the one-request invariant.
+
+### Local Tasks API
+
+Case 07 uses an in-browser mock on Pages. Its optional Express API runs only locally and in tests, sharing the same token module with the mock.
+
+```sh
+npm --prefix node ci
+cd node && npm run dev
+```
+
+The API listens at http://127.0.0.1:4500 with `POST /login`, `POST /refresh` and `GET /tasks`. Open the local React case at `/angular-bug-clinic/react/cases/07-node-refresh-race/?api=local` to use it. Without that query parameter, the case uses the browser mock. No API is deployed.
+
+Run the API checks with `npm --prefix node run format:check`, `npm --prefix node run lint`, `npm --prefix node test` and `npm --prefix node run build` from the repository root.
 
 ## Verify
 
@@ -79,15 +93,15 @@ node scripts/serve-pages.mjs
 
 Open http://127.0.0.1:4300/angular-bug-clinic/ and follow the React case card.
 
-The React CI job checks the static export separately. Pages combines both builds, placing the React app under `react/` and preserving the five Angular hash routes.
+The React CI job checks the static export separately. Pages combines both builds, placing the React app under `react/` and preserving the Angular hash routes.
 
 ## Stack
 
-Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), RxJS, the Angular CLI default Vitest runner, angular-eslint, Prettier, Playwright and GitHub Actions. Ionic 9.0 is lazy loaded only by case 05. Versions are pinned by package-lock.json. Case 06 uses Next.js 16.4, React 19.3, React Testing Library and Vitest with a separate lockfile.
+Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), RxJS, the Angular CLI default Vitest runner, angular-eslint, Prettier, Playwright and GitHub Actions. Ionic 9.0 is lazy loaded only by case 05. Versions are pinned by package-lock.json. Cases 06, 07 and 09 use Next.js 16.4, React 19.3, React Testing Library and Vitest with a separate lockfile. Case 07 adds a local Express 5 API and MSW browser interception.
 
 ## Portfolio material
 
-Sixteen [1600 × 1200 screenshots](docs/screenshots/) and eight portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
+Eighteen [1600 × 1200 screenshots](docs/screenshots/) and nine portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
 
 ## License
 
