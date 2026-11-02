@@ -15,9 +15,9 @@ A collection of real-world Angular, Ionic and React bugs, each with a broken ver
 | 05 — Ionic back button      | [Read](src/app/cases/05-ionic-back-button/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c1d255ca08e7...34af5bd11a04)             |
 | 06 — React effect loop      | [Read](react/README.md)                                 | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/)                          | [Broken](react/src/broken-orders.tsx) → [Fixed](react/src/fixed-orders.tsx)                                             |
 | 08 — Keyboard-safe dialog   | [Read](src/app/cases/08-keyboard-dialog/README.md)      | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/08-keyboard-dialog)      | [Broken](src/app/cases/08-keyboard-dialog/broken-dialog.ts) → [Fixed](src/app/cases/08-keyboard-dialog/fixed-dialog.ts) |
-| 09 — Accessible form errors | [Read](react/cases/09-form-errors/README.md)            | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/09-form-errors/)     | [Compare](react/src/signup-form.tsx)                                                                                    |
+| 09 — Accessible form errors | [Read](react/cases/09-form-errors/README.md)            | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/09-form-errors/)     | [Shared form (Broken/Fixed)](react/src/signup-form.tsx)                                                                 |
 
-Accessibility: targeted WCAG 2.2 repairs with keyboard contracts, axe-core checks and manual screen-reader checklists awaiting verification.
+Accessibility: targeted WCAG 2.2 repairs verified with keyboard contracts, axe-core checks and a manual NVDA pass.
 
 ## Run locally
 

@@ -104,7 +104,7 @@ Portfolio copy for each case
 
 **Role:** Developer
 
-**Description:** A contact editor kept keyboard focus behind an overlay and lost its return point. I mapped the defects to WCAG 2.2 Keyboard, Focus Order and Name, Role, Value, then used a named native dialog with initial focus, Tab containment and keyboard close actions. Unit contracts, keyboard browser tests and axe-core demonstrate Broken and verify Fixed. The write-up includes a separate manual screen-reader checklist.
+**Description:** A contact editor kept keyboard focus behind an overlay and lost its return point. I mapped the defects to WCAG 2.2 Keyboard, Focus Order and Name, Role, Value, then used a named native dialog with initial focus, Tab containment and keyboard close actions. Unit contracts, keyboard browser tests and axe-core demonstrate Broken and verify Fixed. Verified manually with NVDA.
 
 **Skills:** Web Accessibility, Accessibility Testing, Angular, TypeScript, Web Content Accessibility Guidelines
 
@@ -120,7 +120,7 @@ Portfolio copy for each case
 
 **Role:** Developer
 
-**Description:** A sign-up form displayed red errors without accessible labels, descriptions or a useful focus destination. I mapped the failures to WCAG 2.2 relationships, error identification, labels and status messages. Explicit labels, linked errors, a focused summary and a polite success region repair the flow. Unit tests, keyboard browser checks and axe-core compare Broken with Fixed; a manual screen-reader checklist is included separately.
+**Description:** A sign-up form displayed red errors without accessible labels, descriptions or a useful focus destination. I mapped the failures to WCAG 2.2 relationships, error identification, labels and status messages. Explicit labels, linked errors, a focused summary and a polite success region repair the flow. Unit tests, keyboard browser checks and axe-core compare Broken with Fixed. Verified manually with NVDA.
 
 **Skills:** Web Accessibility, Accessibility Testing, React, TypeScript, Web Content Accessibility Guidelines
 

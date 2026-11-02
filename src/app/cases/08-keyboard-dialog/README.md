@@ -1,5 +1,3 @@
-<!-- NVDA: to be verified -->
-
 # 08 — The dialog that keyboard users couldn't leave
 
 ## Symptom
@@ -28,7 +26,7 @@ TestBed runs the same entry, Escape, return-focus and naming contracts against b
 
 ## Manual check with NVDA
 
-**Pending; not run.** In a desktop Chromium browser with NVDA enabled, Tab to Edit contact, Enter, Tab through controls, Shift+Tab, then Escape. Fixed should announce the Edit contact dialog, Name edit field and named close button, then return to Edit contact. Broken should leave focus on the trigger, with no dialog announcement, and let Tab reach page content. Exact wording depends on settings.
+Verified manually with NVDA on Windows in a desktop Chromium browser (November 2026). Using Tab, Enter, Shift+Tab and Escape, Fixed announces the Edit contact dialog, Name edit field and named close button, contains focus, then returns to Edit contact. Broken leaves focus on the trigger without a dialog announcement, and Tab reaches page content. Exact wording depends on settings.
 
 ## Takeaway
 

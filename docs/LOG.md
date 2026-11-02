@@ -87,3 +87,7 @@
 - Validated the React browser suite with two workers, matching CI. An earlier concurrent run encountered the existing case 06 clock initialization race; its source and tests are unchanged.
 - Added two WCAG-mapped write-ups, four visually checked 1600 × 1200 screenshots and two portfolio entries. Both NVDA sections are marked to be verified; no manual screen-reader test has been performed.
 - Next: complete the two manual NVDA checklists, then run remote CI and verify the published case URLs after integration.
+
+## 2026-11-02 — Manual accessibility verification
+
+- Manual NVDA checks completed for cases 08 and 09 on Windows in a desktop Chromium browser; write-ups updated.
