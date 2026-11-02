@@ -91,3 +91,13 @@
 ## 2026-11-02 — Manual accessibility verification
 
 - Manual NVDA checks completed for cases 08 and 09 on Windows in a desktop Chromium browser; write-ups updated.
+
+## 2026-11-02 — Case 07: Rotating refresh tokens
+
+- Added a local-only Express Tasks API with five-second access tokens, rotating refresh tokens and strict family revocation after reuse. Browser handlers import the same runtime-independent token module; only static assets are published.
+- Added a shared React dashboard with a visible session log. Broken refreshes each expired request independently; Fixed shares one pending refresh, handles late 401 responses and retries once. Tokens stay in memory and are omitted from the log.
+- Added API contracts for rotation, exact expiry, reuse, fresh sessions, invalid input and local-origin access. React contracts use MSW with an injected clock; browser checks wait for the actual token deadline and verify worker interception, keyboard operation and a narrow viewport.
+- Validation passed: root formatting, lint, 42 unit contracts (9 expected Broken failures), 35 development browser checks, the Pages build and 35 production browser checks; React formatting, lint, 21 unit contracts (6 expected Broken failures), static build, type checking and 16 browser checks (5 expected Broken failures); Node formatting, lint, 6 API tests, type checking and build.
+- Verified the combined static site across all nine case links and reloads. Separately exercised the React client against the actual local Express process: Broken issued three refresh requests and lost the session; Fixed issued one and loaded all three task lists.
+- Added two visually checked 1600 × 1200 screenshots, a case write-up and a portfolio entry. Existing case implementations and their screenshots are unchanged. Added a separate Node CI job while retaining the existing jobs and deployment steps.
+- Next: run remote CI and verify the published case URL after integration.
