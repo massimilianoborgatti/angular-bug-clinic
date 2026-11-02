@@ -457,15 +457,18 @@ pre {
 }
 @media (max-width: 760px) {
   .site-header {
-    padding: 0 20px;
-    gap: 25px;
-    height: 76px;
+    padding: 16px 20px;
+    gap: 16px 25px;
+    height: auto;
+    min-height: 76px;
+    flex-wrap: wrap;
   }
   .header-note {
     display: none;
   }
   .site-header nav {
-    gap: 16px;
+    gap: 12px 16px;
+    flex-wrap: wrap;
   }
   .site-footer {
     margin: 40px 20px 0;
