@@ -72,4 +72,16 @@ export const cases: ClinicCase[] = [
     takeaway: 'Close the top layer before moving the page underneath.',
     ready: true,
   },
+  {
+    id: '08',
+    slug: '08-keyboard-dialog',
+    title: "The dialog that keyboard users couldn't leave",
+    symptom: 'A contact editor opens, but keyboard focus stays behind the overlay.',
+    category: 'Angular · Accessibility',
+    hint: 'Use Tab to reach Edit contact, press Enter, then try Tab, Shift+Tab and Escape. Watch where focus goes.',
+    cause: 'A hand-made overlay adds visual layers without dialog semantics or focus management.',
+    fix: 'Use a named native dialog, focus its first field, contain Tab navigation and restore focus on close.',
+    takeaway: 'Opening a layer means owning its keyboard entry and exit.',
+    ready: true,
+  },
 ];

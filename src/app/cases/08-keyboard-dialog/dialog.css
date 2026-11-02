@@ -1,0 +1,92 @@
+.contact-list {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fcfdf9;
+  padding: 22px;
+}
+.contact-list h2 {
+  font-size: 22px;
+}
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.contact-row p {
+  font-size: 12px;
+  margin: 0;
+  color: #53614f;
+}
+.contact-row strong {
+  display: block;
+  font-size: 15px;
+  color: var(--ink);
+  margin-bottom: 9px;
+}
+.background-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 12px;
+}
+.contact-dialog {
+  width: min(480px, calc(100vw - 32px));
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  padding: 28px;
+  border: 1px solid #aebfa2;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 24px 70px #20382c40;
+}
+.contact-dialog::backdrop {
+  background: #17281fcc;
+}
+.broken-overlay {
+  position: fixed;
+  inset: 0;
+  background: #17281fcc;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+}
+.dialog-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.dialog-heading h2 {
+  margin: 0;
+  font-size: 26px;
+}
+.dialog-close {
+  padding: 7px 12px;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+.contact-dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-dialog input {
+  margin-bottom: 12px;
+  width: 100%;
+}
+.contact-dialog .row {
+  margin-top: 8px;
+}
+.contact-dialog :focus-visible {
+  outline: 3px solid #436d48;
+  outline-offset: 4px;
+}
+.contact-dialog .demo-note {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #53614f;
+  margin: 22px 0 0;
+}

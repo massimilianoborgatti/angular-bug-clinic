@@ -6,14 +6,18 @@ A collection of real-world Angular, Ionic and React bugs, each with a broken ver
 
 ## Cases
 
-| Case                      | Write-up                                                | Demo                                                                                              | Code changes                                                                                                |
-| ------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| 01 — Subscription leak    | [Read](src/app/cases/01-subscription-leak/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/01-subscription-leak)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/f99122abe33b...66ddd5df9401) |
-| 02 — OnPush stale view    | [Read](src/app/cases/02-onpush-stale-view/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/66ddd5df9401...e7dc28931144) |
-| 03 — Async validator race | [Read](src/app/cases/03-async-validator-race/README.md) | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race) | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/e7dc28931144...fd0ac843fca6) |
-| 04 — Guard redirect loop  | [Read](src/app/cases/04-guard-redirect-loop/README.md)  | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)  | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c6040243cde7...c1d255ca08e7) |
-| 05 — Ionic back button    | [Read](src/app/cases/05-ionic-back-button/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c1d255ca08e7...34af5bd11a04) |
-| 06 — React effect loop    | [Read](react/README.md)                                 | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/)                          | [Broken](react/src/broken-orders.tsx) → [Fixed](react/src/fixed-orders.tsx)                                 |
+| Case                        | Write-up                                                | Demo                                                                                              | Code changes                                                                                                            |
+| --------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 01 — Subscription leak      | [Read](src/app/cases/01-subscription-leak/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/01-subscription-leak)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/f99122abe33b...66ddd5df9401)             |
+| 02 — OnPush stale view      | [Read](src/app/cases/02-onpush-stale-view/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/02-onpush-stale-view)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/66ddd5df9401...e7dc28931144)             |
+| 03 — Async validator race   | [Read](src/app/cases/03-async-validator-race/README.md) | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/03-async-validator-race) | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/e7dc28931144...fd0ac843fca6)             |
+| 04 — Guard redirect loop    | [Read](src/app/cases/04-guard-redirect-loop/README.md)  | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/04-guard-redirect-loop)  | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c6040243cde7...c1d255ca08e7)             |
+| 05 — Ionic back button      | [Read](src/app/cases/05-ionic-back-button/README.md)    | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/05-ionic-back-button)    | [Case diff](https://github.com/massimilianoborgatti/angular-bug-clinic/compare/c1d255ca08e7...34af5bd11a04)             |
+| 06 — React effect loop      | [Read](react/README.md)                                 | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/)                          | [Broken](react/src/broken-orders.tsx) → [Fixed](react/src/fixed-orders.tsx)                                             |
+| 08 — Keyboard-safe dialog   | [Read](src/app/cases/08-keyboard-dialog/README.md)      | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/08-keyboard-dialog)      | [Broken](src/app/cases/08-keyboard-dialog/broken-dialog.ts) → [Fixed](src/app/cases/08-keyboard-dialog/fixed-dialog.ts) |
+| 09 — Accessible form errors | [Read](react/cases/09-form-errors/README.md)            | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/09-form-errors/)     | [Shared form (Broken/Fixed)](react/src/signup-form.tsx)                                                                 |
+
+Accessibility: targeted WCAG 2.2 repairs verified with keyboard contracts, axe-core checks and a manual NVDA pass.
 
 ## Run locally
 
@@ -83,7 +87,7 @@ Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), Rx
 
 ## Portfolio material
 
-Twelve [1600 × 1200 screenshots](docs/screenshots/) and six portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
+Sixteen [1600 × 1200 screenshots](docs/screenshots/) and eight portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
 
 ## License
 

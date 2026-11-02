@@ -30,5 +30,10 @@ export const routes: Routes = [
       import('./cases/05-ionic-back-button/case-05.routes').then((m) => m.CASE_05_ROUTES),
     title: 'Case 05 · Angular Bug Clinic',
   },
+  {
+    path: 'cases/08-keyboard-dialog',
+    loadComponent: () => import('./cases/08-keyboard-dialog/case-08').then((m) => m.Case08),
+    title: 'Case 08 · Angular Bug Clinic',
+  },
   { path: '**', redirectTo: '' },
 ];
