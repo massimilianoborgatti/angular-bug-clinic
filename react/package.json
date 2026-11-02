@@ -17,9 +17,12 @@
     "test": "vitest run",
     "e2e": "playwright test",
     "screenshots": "playwright test --config playwright.screenshots.config.ts",
-    "e2e:integration": "playwright test --config playwright.integration.config.ts"
+    "e2e:integration": "playwright test --config playwright.integration.config.ts",
+    "prebuild": "node scripts/prepare-worker.mjs",
+    "predev": "node scripts/prepare-worker.mjs"
   },
   "dependencies": {
+    "msw": "3.0.3",
     "next": "16.4.3",
     "react": "19.3.1",
     "react-dom": "19.3.1"

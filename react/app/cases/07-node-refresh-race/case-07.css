@@ -1,0 +1,91 @@
+.tasks-demo {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fcfdf9;
+}
+.tasks-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.tasks-heading h2 {
+  font-size: 25px;
+  margin: 0;
+}
+.task-session {
+  font-size: 13px;
+  font-weight: 700;
+}
+.task-intro,
+.task-note {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #53614f;
+}
+.task-intro {
+  margin: 14px 0;
+}
+.task-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.task-controls > span {
+  font-size: 13px;
+}
+.task-lists {
+  list-style: none;
+  padding: 0;
+  margin: 18px 0;
+  display: grid;
+  gap: 8px;
+}
+.task-lists li {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 12px;
+  background: #eff3e9;
+  border-radius: 6px;
+  font-size: 13px;
+}
+.task-lists span {
+  width: 75px;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.tasks-demo h3 {
+  font-size: 16px;
+  margin: 20px 0 10px;
+}
+.session-log {
+  padding: 14px 14px 14px 34px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  font: 12px/1.8 monospace;
+  overflow-wrap: anywhere;
+}
+.session-log:empty::after {
+  content: 'Log in to begin.';
+  color: #53614f;
+}
+.task-note {
+  margin: 14px 0 0;
+}
+@media (max-width: 480px) {
+  .tasks-demo {
+    padding: 14px;
+  }
+  .task-lists li {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
