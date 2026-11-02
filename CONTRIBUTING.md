@@ -3,7 +3,8 @@
 Read [docs/OVERVIEW.md](docs/OVERVIEW.md) before making changes.
 
 - Use a neutral tasks and notifications domain with in-memory mock data and artificial delays.
-- Add no backend, secrets, or real external APIs.
+- No deployed backend. Case 07 includes a small Express API in `node/` that runs only locally and in tests. The live demo uses an in-browser mock built from the same token logic.
+- Add no secrets or real external APIs.
 - Use standalone Angular components, signals where appropriate, strict TypeScript, and built-in control flow.
 - Keep all code, comments, documentation, and commit messages in English.
 - Keep Broken and Fixed implementations minimal and comparable. Shared code should make the focused repair easy to see.
