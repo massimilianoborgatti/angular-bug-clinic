@@ -16,3 +16,10 @@ react/coverage/
 react/test-results/
 react/playwright-report/
 react/tsconfig.tsbuildinfo
+
+node/node_modules/
+node/dist/
+node/coverage/
+node/test-results/
+node/playwright-report/
+react/public/mockServiceWorker.js

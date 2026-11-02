@@ -8,6 +8,7 @@ export default defineConfig([
   { files: ['src/broken-orders.tsx'], rules: { 'react-hooks/exhaustive-deps': 'off' } },
   globalIgnores([
     '.next/**',
+    'public/mockServiceWorker.js',
     'out/**',
     'next-env.d.ts',
     'coverage/**',

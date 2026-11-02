@@ -12,7 +12,7 @@ Every case includes a regression test for the desired behavior. The same invaria
 
 The case README explains the symptom, gives a short reproduction, identifies the root cause, describes the fix, links to the relevant change, and explains how it is tested. It ends with a takeaway that applies beyond the example.
 
-## The eight cases
+## The nine cases
 
 <!-- prettier-ignore -->
 1. [Subscription leak](../src/app/cases/01-subscription-leak/README.md): leaving and reopening a notification widget multiplies its listeners → tie the subscription to component destruction with `takeUntilDestroyed`.
@@ -21,6 +21,7 @@ The case README explains the symptom, gives a short reproduction, identifies the
 4. [Guard redirect loop](../src/app/cases/04-guard-redirect-loop/README.md): a guest is redirected to a login route protected by the same guard → leave login reachable, return a `UrlTree`, and check the return destination.
 5. [Ionic back button](../src/app/cases/05-ionic-back-button/README.md): a back handler moves the page underneath an open modal → respect overlay priorities and release the navigation handler on destruction.
 6. [React effect loop](../react/README.md): an unstable effect dependency repeats requests and obsolete responses replace current results → use primitive dependencies and ignore stale responses during cleanup.
+7. [Refresh token race](../react/cases/07-node-refresh-race/README.md): parallel expired requests revoke a rotating-token session → share one refresh promise and retry once.
 8. [Keyboard-safe dialog](../src/app/cases/08-keyboard-dialog/README.md): an overlay loses keyboard entry and exit → use a named native dialog and restore focus.
 9. [Accessible form errors](../react/cases/09-form-errors/README.md): visual errors lack names and relationships → add labels, error descriptions, a focused summary and live completion feedback.
 
@@ -33,6 +34,8 @@ Vitest is the Angular CLI default unit-test runner. Playwright checks the browse
 GitHub Actions runs formatting, lint, unit tests, browser tests, and the production build. A successful main-branch CI run enables deployment to GitHub Pages. Hash routing keeps direct case links and reloads working on a static deployment without server-side route handling; the build also sets the `/angular-bug-clinic/` base path.
 
 Case 06 runs independently in `react/` using Next.js static export, React, Vitest and React Testing Library. Its own CI job checks the build at `/angular-bug-clinic/react/`; Pages publishes both apps together.
+
+Case 07 adds an optional local Express API in `node/`. Its pure token module is shared with MSW browser handlers; the published demo needs no deployed API. A separate CI job checks the API, and the React suite checks the client and browser mock.
 
 ## Run and verify
 
