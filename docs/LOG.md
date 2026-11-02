@@ -101,3 +101,9 @@
 - Verified the combined static site across all nine case links and reloads. Separately exercised the React client against the actual local Express process: Broken issued three refresh requests and lost the session; Fixed issued one and loaded all three task lists.
 - Added two visually checked 1600 × 1200 screenshots, a case write-up and a portfolio entry. Existing case implementations and their screenshots are unchanged. Added a separate Node CI job while retaining the existing jobs and deployment steps.
 - Next: run remote CI and verify the published case URL after integration.
+
+## 2026-11-02 — Case 09 page metadata
+
+- Added a route layout with a dedicated form-errors title and description instead of inheriting the effect-loop metadata.
+- Connected all three React cases (06, 07 and 09) in each page header and marked the current-page link. Header links wrap on small screens. Browser regressions check the title, description, reload, tab switching and navigation between all React cases at 360 pixels.
+- Validation passed: root formatting; React formatting, lint, 21 unit contracts (6 expected Broken failures), production build, type checking, 18 browser checks (5 expected Broken failures) and combined static-site integration.

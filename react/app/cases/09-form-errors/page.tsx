@@ -33,6 +33,10 @@ export default function Page() {
         <nav aria-label="Main navigation">
           <a href="/angular-bug-clinic/#/">Case library</a>
           <a href="/angular-bug-clinic/react/">Case 06</a>
+          <a href="/angular-bug-clinic/react/cases/07-node-refresh-race/">Case 07</a>
+          <a href="/angular-bug-clinic/react/cases/09-form-errors/" aria-current="page">
+            Case 09
+          </a>
           <a href="https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/09-form-errors">
             Source code ↗
           </a>
