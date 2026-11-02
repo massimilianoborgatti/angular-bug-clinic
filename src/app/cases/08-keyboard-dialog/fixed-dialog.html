@@ -1,0 +1,58 @@
+<section class="contact-list">
+  <h2>Contacts</h2>
+  <div class="contact-row">
+    <p>
+      <strong>{{ name() }}</strong
+      >{{ email() }}
+    </p>
+    <button #trigger type="button" (click)="open(trigger)">Edit contact</button>
+  </div>
+  <button type="button" class="background-link" (click)="help.set(!help())">
+    Contact list help
+  </button>
+  @if (help()) {
+    <p>Choose Edit contact to update the local contact.</p>
+  }
+</section>
+<dialog
+  #dialog
+  class="contact-dialog"
+  data-testid="contact-dialog"
+  aria-modal="true"
+  aria-labelledby="contact-dialog-title"
+  (cancel)="close($event)"
+>
+  <div class="dialog-heading">
+    <h2 id="contact-dialog-title">Edit contact</h2>
+    <button
+      type="button"
+      class="dialog-close"
+      aria-label="Close edit contact"
+      data-testid="close-contact"
+      (click)="close()"
+    >
+      ×
+    </button>
+  </div>
+  <form (submit)="save($event)">
+    <label for="contact-name">Name</label
+    ><input
+      #firstField
+      id="contact-name"
+      [value]="draftName()"
+      (input)="draftName.set($any($event.target).value)"
+    />
+    <label for="contact-email">Email</label
+    ><input
+      id="contact-email"
+      type="email"
+      [value]="draftEmail()"
+      (input)="draftEmail.set($any($event.target).value)"
+    />
+    <div class="row">
+      <button type="submit" class="primary">Save</button
+      ><button type="button" (click)="close()">Cancel</button>
+    </div>
+  </form>
+  <p class="demo-note">In-memory contact data. Nothing is sent or stored outside this page.</p>
+</dialog>
