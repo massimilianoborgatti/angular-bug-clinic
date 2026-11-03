@@ -9,7 +9,7 @@ test('the combined static site links both apps and preserves every Angular case 
     if (response.status() >= 400) failedAssets.push(response.url());
   });
   await page.goto('./');
-  await expect(page.locator('.case-card')).toHaveCount(9);
+  await expect(page.locator('.case-card')).toHaveCount(10);
   await page.getByRole('link', { name: /CASE 06/ }).click();
   await expect(page).toHaveURL(/\/angular-bug-clinic\/react\/$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The effect that never stopped');
@@ -19,7 +19,7 @@ test('the combined static site links both apps and preserves every Angular case 
   await page.reload();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The effect that never stopped');
   await page.getByRole('link', { name: 'Back to the case library', exact: false }).click();
-  await expect(page.locator('.case-card')).toHaveCount(9);
+  await expect(page.locator('.case-card')).toHaveCount(10);
   for (const slug of [
     '01-subscription-leak',
     '02-onpush-stale-view',
