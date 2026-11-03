@@ -35,5 +35,10 @@ export const routes: Routes = [
     loadComponent: () => import('./cases/08-keyboard-dialog/case-08').then((m) => m.Case08),
     title: 'Case 08 · Angular Bug Clinic',
   },
+  {
+    path: 'cases/10-woocommerce-cart',
+    loadComponent: () => import('./cases/10-woocommerce-cart/case-10').then((m) => m.Case10),
+    title: 'Case 10 · Angular Bug Clinic',
+  },
   { path: '**', redirectTo: '' },
 ];
