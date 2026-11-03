@@ -21,6 +21,7 @@ const result = await parseOptionsAndRunCLI([
 ]);
 if ('exitCode' in result) process.exitCode = result.exitCode;
 else {
+  console.log('Shop fixture ready: ' + variant);
   const stop = async () => {
     await result[Symbol.asyncDispose]();
     process.exit(0);
