@@ -9,8 +9,7 @@ export default defineConfig({
   use: { ...devices['Desktop Chrome'], trace: 'retain-on-failure' },
   webServer: ['broken', 'fixed'].map((variant, index) => ({
     command: 'node scripts/run.mjs ' + variant + ' ' + (9410 + index),
-    url: 'http://127.0.0.1:' + (9410 + index) + '/wp-includes/css/dashicons.min.css',
+    wait: { stdout: /Shop fixture ready:/ },
     timeout: 600_000,
-    reuseExistingServer: !process.env.CI,
   })),
 });
