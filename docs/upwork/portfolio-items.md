@@ -145,3 +145,19 @@ Portfolio copy for each case
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/09-form-errors/)
 
 **Screenshots:** [Broken](../screenshots/09-broken.png) · [Fixed](../screenshots/09-fixed.png)
+
+## 10 — WooCommerce header cart fragments
+
+**Title:** WooCommerce fix: header cart that only updated after a reload
+
+**Role:** Developer
+
+**Description:** A shop added products successfully, but its custom header count stayed at zero and a spinner never stopped. I traced both symptoms to a child theme's mismatched cart-fragment selector and DOM-dependent feedback. Shared header markup and a matching selector restore the cart count and total; request events release the spinner on success or failure. Browser tests compare Broken and Fixed using real WooCommerce in WordPress Playground.
+
+**Skills:** WordPress, WooCommerce, PHP, JavaScript, Bug Fix
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/blob/main/docs/cases/10-woocommerce-cart.md)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/10-woocommerce-cart)
+
+**Screenshots:** [Broken](../screenshots/10-broken.png) · [Fixed](../screenshots/10-fixed.png)
