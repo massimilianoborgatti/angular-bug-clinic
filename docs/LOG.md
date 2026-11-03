@@ -107,3 +107,13 @@
 - Added a route layout with a dedicated form-errors title and description instead of inheriting the effect-loop metadata.
 - Connected all three React cases (06, 07 and 09) in each page header and marked the current-page link. Header links wrap on small screens. Browser regressions check the title, description, reload, tab switching and navigation between all React cases at 360 pixels.
 - Validation passed: root formatting; React formatting, lint, 21 unit contracts (6 expected Broken failures), production build, type checking, 18 browser checks (5 expected Broken failures) and combined static-site integration.
+
+## 2026-11-03 — Case 10: WooCommerce cart fragments
+
+- Added two original Storefront child themes for a successful AJAX addition with stale header feedback. Broken returns an absent fragment selector and watches the badge; Fixed shares header markup and selector construction, and releases pending feedback on success or failure events.
+- Added independent Playground configurations with WordPress 7.1.4, WooCommerce 11.2.1, Storefront 4.6.2 and PHP 8.3. The fixture disables scheduled and asynchronous background work; cart requests remain real. One request worker avoids SQLite contention on Windows, and readiness checks use a static stylesheet instead of repeated PHP requests. First local preparation can take several minutes.
+- Added child-theme archive generation, a static case page with two Playground links, a library card and a separate 20-minute CI job with one browser-test retry. Only the small child-theme archives and configurations accompany the static app; no WordPress core or plugin copy is included.
+- Validation passed: root formatting, lint, 42 unit contracts (9 expected Broken failures), 36 development browser checks, Pages build and 36 production browser checks; React formatting, lint, 21 unit contracts (6 expected Broken failures), static build, type checking, 18 browser checks and combined static-site integration; Node formatting, lint, 6 API tests, build and type checking.
+- WordPress checks passed: JavaScript formatting and lint, PHP syntax parsing through Playground, 6 real-shop browser contracts (2 expected Broken failures), and 2 visually checked 1600 × 1200 captures. Fixed updates the first item's count and total, clears its spinner, accepts a second product and releases pending feedback after a failed request. Broken separately proves the successful addition and stale feedback before reloading.
+- Added a 357-word write-up and a portfolio entry within its title and description limits. Existing case implementations and images are unchanged.
+- Next: run remote CI and verify the published case page and its two Playground asset URLs after integration.
