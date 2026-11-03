@@ -1,0 +1,86 @@
+/*
+Theme Name: Bug Clinic Shop
+Template: storefront
+Version: 1.0.0
+License: MIT
+Text Domain: bug-clinic-shop
+*/
+body {
+  background: #f7f8f3;
+  color: #253b32;
+}
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #dfe4da;
+}
+.site-branding .site-title a {
+  color: #213c32;
+}
+.clinic-header-cart {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 18px;
+  border: 1px solid #dfe4da;
+  border-radius: 8px;
+  background: #edf3e4;
+  color: #213c32;
+  font-weight: 600;
+}
+.clinic-cart-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #213c32;
+  color: #fff;
+}
+.clinic-cart-total {
+  margin-left: 8px;
+}
+.site-header-cart {
+  width: auto;
+  float: right;
+  margin: 0 0 20px;
+}
+.woocommerce #primary {
+  width: 100%;
+  margin-right: 0;
+}
+ul.products li.product {
+  background: #fff;
+  border: 1px solid #dfe4da;
+  border-radius: 9px;
+  padding: 18px;
+}
+ul.products li.product img {
+  max-height: 210px;
+  object-fit: contain;
+}
+.button,
+a.button {
+  border-radius: 6px;
+}
+.add_to_cart_button.clinic-pending::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-left: 10px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: clinic-spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+@keyframes clinic-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .add_to_cart_button.clinic-pending::after {
+    animation: none;
+  }
+}
