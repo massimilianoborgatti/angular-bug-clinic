@@ -12,7 +12,7 @@ Every case includes a regression test for the desired behavior. The same invaria
 
 The case README explains the symptom, gives a short reproduction, identifies the root cause, describes the fix, links to the relevant change, and explains how it is tested. It ends with a takeaway that applies beyond the example.
 
-## The nine cases
+## The ten cases
 
 <!-- prettier-ignore -->
 1. [Subscription leak](../src/app/cases/01-subscription-leak/README.md): leaving and reopening a notification widget multiplies its listeners → tie the subscription to component destruction with `takeUntilDestroyed`.
@@ -24,6 +24,7 @@ The case README explains the symptom, gives a short reproduction, identifies the
 7. [Refresh token race](../react/cases/07-node-refresh-race/README.md): parallel expired requests revoke a rotating-token session → share one refresh promise and retry once.
 8. [Keyboard-safe dialog](../src/app/cases/08-keyboard-dialog/README.md): an overlay loses keyboard entry and exit → use a named native dialog and restore focus.
 9. [Accessible form errors](../react/cases/09-form-errors/README.md): visual errors lack names and relationships → add labels, error descriptions, a focused summary and live completion feedback.
+10. [WooCommerce cart fragments](cases/10-woocommerce-cart.md): a successful cart addition leaves stale header feedback → match the fragment selector and finish pending feedback on request events.
 
 ## Stack and tooling
 
@@ -36,6 +37,8 @@ GitHub Actions runs formatting, lint, unit tests, browser tests, and the product
 Case 06 runs independently in `react/` using Next.js static export, React, Vitest and React Testing Library. Its own CI job checks the build at `/angular-bug-clinic/react/`; Pages publishes both apps together.
 
 Case 07 adds an optional local Express API in `node/`. Its pure token module is shared with MSW browser handlers; the published demo needs no deployed API. A separate CI job checks the API, and the React suite checks the client and browser mock.
+
+Case 10 uses a Storefront child theme with WooCommerce inside WordPress Playground. Separate browser configurations load Broken or Fixed. The same configurations run locally through the Playground CLI for browser checks.
 
 ## Run and verify
 
