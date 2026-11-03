@@ -23,3 +23,11 @@ node/coverage/
 node/test-results/
 node/playwright-report/
 react/public/mockServiceWorker.js
+
+blob-report/
+*.zip
+.vscode/
+.idea/
+wordpress/**/.playground/
+wordpress/**/wp-content/uploads/
+wordpress/**/vendor/
