@@ -164,3 +164,10 @@
 - Validation passed: root formatting, lint, 42 unit contracts (9 expected Broken failures), 36 development and 36 Pages browser checks (6 expected Broken failures per browser suite), and the Pages build; React formatting, lint, 30 unit contracts (9 expected Broken failures), static build, type checking, 53 browser checks (19 expected Broken failures), both screenshot checks and combined-site navigation across all thirteen cases.
 - Added a 366-word write-up, a portfolio entry within its title/description/skill limits and two visually checked 1600 by 1200 light-theme screenshots captured from the top. The original reference images and all new tracked files stay below one million bytes.
 - Rechecked case 12 after the shared navigation layout change: mobile medians Broken/Fixed were LCP 6.834/2.161 seconds, CLS 0.438/0.000 and TBT 2745/147 milliseconds. Fixed passed every budget and Broken exceeded all three limits as expected. The published recorded-results snapshot remains unchanged.
+
+## 2026-11-04 — Case 12 measurement consistency
+
+- The CSS background and its hidden readiness image could start the same request at different priorities. Explicit high priority on the readiness image keeps the request consistent; the heavy artwork is still discovered only after hydration.
+- Separated the late preference notice from the artwork paint with a cancellable initialization delay. The browser check now requires painted artwork without the notice before checking the subsequent document-flow shift.
+- Kept all budgets, the mobile simulated profile, Fixed and the recorded-results snapshot unchanged. Local three-run medians Broken/Fixed: LCP 6.910/2.148 seconds, CLS 0.438/0.000 and TBT 2693/134 milliseconds. Fixed passes every budget; Broken exceeds all three limits.
+- React formatting, lint, 30 unit contracts (9 expected Broken failures), static build, type checking and all 53 browser checks (19 expected Broken failures) passed, including the painted-artwork regression.
