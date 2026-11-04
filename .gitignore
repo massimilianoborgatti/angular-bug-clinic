@@ -26,6 +26,11 @@ node/playwright-report/
 react/public/mockServiceWorker.js
 
 blob-report/
+.lighthouseci/
+*.tsbuildinfo
+next-env.d.ts
+.next/
+out/
 *.zip
 .vscode/
 .idea/

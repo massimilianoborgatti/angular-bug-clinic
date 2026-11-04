@@ -18,8 +18,11 @@ A collection of real-world Angular, Ionic and React bugs, each with a broken ver
 | 08 — Keyboard-safe dialog       | [Read](src/app/cases/08-keyboard-dialog/README.md)      | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/08-keyboard-dialog)        | [Broken](src/app/cases/08-keyboard-dialog/broken-dialog.ts) → [Fixed](src/app/cases/08-keyboard-dialog/fixed-dialog.ts) |
 | 09 — Accessible form errors     | [Read](react/cases/09-form-errors/README.md)            | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/09-form-errors/)       | [Shared form (Broken/Fixed)](react/src/signup-form.tsx)                                                                 |
 | 10 — WooCommerce cart fragments | [Read](docs/cases/10-woocommerce-cart.md)               | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/10-woocommerce-cart)       | [Broken](wordpress/case-10/broken/bug-clinic-shop/) → [Fixed](wordpress/case-10/fixed/bug-clinic-shop/)                 |
+| 11 — SPA analytics              | [Read](react/cases/11-spa-analytics/README.md)          | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/11-spa-analytics/)     | [Tracker](react/src/analytics/tracker.ts) · [Route hook](react/src/analytics/use-page-views.ts)                         |
 
 WordPress/WooCommerce fixes in a child theme.
+
+SPA analytics: route-aware GA4 page views, Consent Mode v2 and a local dataLayer inspector.
 
 Accessibility: targeted WCAG 2.2 repairs verified with keyboard contracts, axe-core checks and a manual NVDA pass.
 
@@ -114,11 +117,11 @@ The React CI job checks the static export separately. Pages combines both builds
 
 ## Stack
 
-Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), RxJS, the Angular CLI default Vitest runner, angular-eslint, Prettier, Playwright and GitHub Actions. Ionic 9.0 is lazy loaded only by case 05. Versions are pinned by package-lock.json. Cases 06, 07 and 09 use Next.js 16.4, React 19.3, React Testing Library and Vitest with a separate lockfile. Case 07 adds a local Express 5 API and MSW browser interception.
+Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), RxJS, the Angular CLI default Vitest runner, angular-eslint, Prettier, Playwright and GitHub Actions. Ionic 9.0 is lazy loaded only by case 05. Versions are pinned by package-lock.json. Cases 06, 07, 09 and 11 use Next.js 16.4, React 19.3, React Testing Library and Vitest with a separate lockfile. Case 07 adds a local Express 5 API and MSW browser interception.
 
 ## Portfolio material
 
-Twenty [1600 × 1200 screenshots](docs/screenshots/) and ten portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
+Twenty-two [1600 × 1200 screenshots](docs/screenshots/) and eleven portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
 
 ## License
 

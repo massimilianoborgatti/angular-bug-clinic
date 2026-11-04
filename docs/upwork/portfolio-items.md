@@ -161,3 +161,19 @@ Portfolio copy for each case
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/10-woocommerce-cart)
 
 **Screenshots:** [Broken](../screenshots/10-broken.png) · [Fixed](../screenshots/10-fixed.png)
+
+## 11 — SPA page views and consent
+
+**Title:** Analytics fix: GA4 page views and consent in a React/Next.js app
+
+**Role:** Developer
+
+**Description:** A React shop counted its first page twice, missed client navigation and recorded events before consent. I traced the overlap between automatic config tracking and a mount-only layout effect. A route-aware hook observes pathname and query changes, disables the automatic view and gates events behind Consent Mode v2 signals. Unit and static-build browser tests compare Broken with Fixed, including wishlist parameters. A local dataLayer inspector makes every command visible without real tracking services.
+
+**Skills:** Google Analytics, Google Tag Manager, React, Next.js, JavaScript
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/11-spa-analytics)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/11-spa-analytics/)
+
+**Screenshots:** [Broken](../screenshots/11-broken.png) · [Fixed](../screenshots/11-fixed.png)

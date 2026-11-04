@@ -12,7 +12,7 @@ Every case includes a regression test for the desired behavior. The same invaria
 
 The case README explains the symptom, gives a short reproduction, identifies the root cause, describes the fix, links to the relevant change, and explains how it is tested. It ends with a takeaway that applies beyond the example.
 
-## The ten cases
+## The eleven cases
 
 <!-- prettier-ignore -->
 1. [Subscription leak](../src/app/cases/01-subscription-leak/README.md): leaving and reopening a notification widget multiplies its listeners → tie the subscription to component destruction with `takeUntilDestroyed`.
@@ -25,6 +25,7 @@ The case README explains the symptom, gives a short reproduction, identifies the
 8. [Keyboard-safe dialog](../src/app/cases/08-keyboard-dialog/README.md): an overlay loses keyboard entry and exit → use a named native dialog and restore focus.
 9. [Accessible form errors](../react/cases/09-form-errors/README.md): visual errors lack names and relationships → add labels, error descriptions, a focused summary and live completion feedback.
 10. [WooCommerce cart fragments](cases/10-woocommerce-cart.md): a successful cart addition leaves stale header feedback → match the fragment selector and finish pending feedback on request events.
+11. [SPA analytics](../react/cases/11-spa-analytics/README.md): duplicate initial views and missed client navigation ignore consent → gate one route-aware event path behind consent and disable the automatic view.
 
 ## Stack and tooling
 
