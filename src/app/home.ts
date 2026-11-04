@@ -9,8 +9,8 @@ import { cases } from './catalog';
         <p class="eyebrow"><span class="tiny-cross">+</span> THE DEBUGGING NOTEBOOK</p>
         <h1>Find the bug.<br />Understand the <em>fix.</em></h1>
         <p class="hero-copy">
-          Ten small debugging case studies.<br />Real symptoms, focused fixes, and tests that prove
-          the difference.
+          Eleven small debugging case studies.<br />Real symptoms, focused fixes, and tests that
+          prove the difference.
         </p>
         <a class="button primary" [routerLink]="['/cases', cases[0].slug]"
           >Explore the first case <span aria-hidden="true">↗</span></a
@@ -42,7 +42,7 @@ import { cases } from './catalog';
           <p class="eyebrow">THE CASE LIBRARY</p>
           <h2>Little details. Noticeable consequences.</h2>
         </div>
-        <span class="case-total">10 cases / one clear approach</span>
+        <span class="case-total">11 cases / one clear approach</span>
       </div>
       <div class="case-grid">
         @for (item of cases; track item.id) {
@@ -110,6 +110,16 @@ import { cases } from './catalog';
           </div>
           <h3>The cart that only updated after a reload</h3>
           <p>An AJAX addition succeeds, but a custom header badge and spinner stay stale.</p>
+          <div class="card-bottom">
+            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
+          </div>
+        </a>
+        <a class="case-card" href="react/cases/11-spa-analytics/">
+          <div class="card-top">
+            <span class="case-number">CASE 11</span><span class="tag">React · Analytics</span>
+          </div>
+          <h3>Page views that lied</h3>
+          <p>Duplicate initial views, missing navigation events and a consent choice ignored.</p>
           <div class="card-bottom">
             <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
           </div>
