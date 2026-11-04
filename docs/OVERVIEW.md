@@ -12,7 +12,7 @@ Every case includes a regression test for the desired behavior. The same invaria
 
 The case README explains the symptom, gives a short reproduction, identifies the root cause, describes the fix, links to the relevant change, and explains how it is tested. It ends with a takeaway that applies beyond the example.
 
-## The twelve cases
+## The thirteen cases
 
 <!-- prettier-ignore -->
 1. [Subscription leak](../src/app/cases/01-subscription-leak/README.md): leaving and reopening a notification widget multiplies its listeners → tie the subscription to component destruction with `takeUntilDestroyed`.
@@ -27,6 +27,7 @@ The case README explains the symptom, gives a short reproduction, identifies the
 10. [WooCommerce cart fragments](cases/10-woocommerce-cart.md): a successful cart addition leaves stale header feedback → match the fragment selector and finish pending feedback on request events.
 11. [SPA analytics](../react/cases/11-spa-analytics/README.md): duplicate initial views and missed client navigation ignore consent → gate one route-aware event path behind consent and disable the automatic view.
 12. [Core Web Vitals](../react/cases/12-core-web-vitals/README.md): late images, moving content and repeated computation slow a landing page → prioritize optimized artwork, reserve space and reuse pricing projections.
+13. [Design to code](../react/cases/13-design-to-code/README.md): a rigid landing page overflows and excludes keyboard interaction → follow original mockups with fluid token-driven layouts and native controls.
 
 ## Stack and tooling
 
