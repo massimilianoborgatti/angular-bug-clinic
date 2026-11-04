@@ -21,7 +21,8 @@
     "prebuild": "node scripts/prepare-worker.mjs",
     "predev": "node scripts/prepare-worker.mjs",
     "performance": "node scripts/measure-vitals.mjs",
-    "assets:case-12": "node scripts/case-12-assets.mjs"
+    "assets:case-12": "node scripts/case-12-assets.mjs",
+    "design:case-13": "node scripts/capture-case-13-design.mjs"
   },
   "dependencies": {
     "msw": "3.0.3",

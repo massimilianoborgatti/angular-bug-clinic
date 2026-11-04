@@ -20,12 +20,15 @@ A collection of real-world Angular, Ionic and React bugs, each with a broken ver
 | 10 — WooCommerce cart fragments | [Read](docs/cases/10-woocommerce-cart.md)               | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/#/cases/10-woocommerce-cart)       | [Broken](wordpress/case-10/broken/bug-clinic-shop/) → [Fixed](wordpress/case-10/fixed/bug-clinic-shop/)                 |
 | 11 — SPA analytics              | [Read](react/cases/11-spa-analytics/README.md)          | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/11-spa-analytics/)     | [Tracker](react/src/analytics/tracker.ts) · [Route hook](react/src/analytics/use-page-views.ts)                         |
 | 12 — Core Web Vitals            | [Read](react/cases/12-core-web-vitals/README.md)        | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/12-core-web-vitals/)   | [Shared landing page](react/src/performance/landing.tsx)                                                                |
+| 13 — Design to code             | [Read](react/cases/13-design-to-code/README.md)         | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/13-design-to-code/)    | [Shared landing page](react/src/design/studio.tsx) · [Tokens](react/cases/13-design-to-code/design-tokens.json)         |
 
 WordPress/WooCommerce fixes in a child theme.
 
 SPA analytics: route-aware GA4 page views, Consent Mode v2 and a local dataLayer inspector.
 
 Performance: measured LCP, CLS and interaction repairs with mobile Lighthouse budgets.
+
+Design to code: original desktop/mobile mockups, token-driven responsive layouts and keyboard controls.
 
 Accessibility: targeted WCAG 2.2 repairs verified with keyboard contracts, axe-core checks and a manual NVDA pass.
 
@@ -124,7 +127,7 @@ Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), Rx
 
 ## Portfolio material
 
-Twenty-four [1600 × 1200 screenshots](docs/screenshots/) and twelve portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
+Twenty-six [1600 × 1200 screenshots](docs/screenshots/), two design reference images and thirteen portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
 
 ## License
 

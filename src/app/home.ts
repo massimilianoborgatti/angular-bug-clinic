@@ -134,6 +134,16 @@ import { cases } from './catalog';
             <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
           </div>
         </a>
+        <a class="case-card" href="react/cases/13-design-to-code/">
+          <div class="card-top">
+            <span class="case-number">CASE 13</span><span class="tag">React · Design to code</span>
+          </div>
+          <h3>The design that broke on phones</h3>
+          <p>A rigid landing page overlaps, overflows and leaves keyboard controls behind.</p>
+          <div class="card-bottom">
+            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
+          </div>
+        </a>
       </div>
     </section>`,
 })
