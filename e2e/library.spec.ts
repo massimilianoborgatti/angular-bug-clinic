@@ -5,7 +5,7 @@ test('every case is reachable from the library, including a direct hash reload',
   await page.goto('./');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Find the bug.');
   const cards = page.locator('.case-card');
-  await expect(cards).toHaveCount(11);
+  await expect(cards).toHaveCount(12);
   await expect(cards.nth(5)).toHaveAttribute('href', 'react/');
   await expect(cards.nth(8)).toHaveAttribute('href', 'react/cases/09-form-errors/');
   for (let i = 0; i < 5; i++) {
@@ -14,7 +14,7 @@ test('every case is reachable from the library, including a direct hash reload',
     await page.reload();
     await expect(page.locator('h1')).toBeVisible();
     await page.getByRole('link', { name: 'Back to the case library', exact: false }).click();
-    await expect(cards).toHaveCount(11);
+    await expect(cards).toHaveCount(12);
   }
 });
 test('no page errors and a usable layout at a narrow viewport', async ({ page }) => {
