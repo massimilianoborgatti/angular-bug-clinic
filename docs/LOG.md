@@ -117,3 +117,14 @@
 - WordPress checks passed: JavaScript formatting and lint, PHP syntax parsing through Playground, 6 real-shop browser contracts (2 expected Broken failures), and 2 visually checked 1600 × 1200 captures. Fixed updates the first item's count and total, clears its spinner, accepts a second product and releases pending feedback after a failed request. Broken separately proves the successful addition and stale feedback before reloading.
 - Added a 357-word write-up and a portfolio entry within its title and description limits. Existing case implementations and images are unchanged.
 - Next: run remote CI and verify the published case page and its two Playground asset URLs after integration.
+
+## 2026-11-04 — Case 11: SPA analytics
+
+- Added Demo Plant Shop with three real Next.js routes, query-driven pot colors, a persistent layout, consent controls and an in-memory gtag/dataLayer inspector. No Google scripts, cookies, real tracking identifiers or tracking requests are used.
+- Broken duplicates the initial view through config and a mount-only effect, ignores navigation and sends events before consent. Fixed defaults all four Consent Mode v2 signals to denied, disables automatic views and uses one pathname/search hook after acceptance. Rejection leaves only consent signals; wishlist events use GA4 item parameters.
+- Connected the eleventh library card and React navigation. New links disable prefetch to avoid platform-dependent segment requests in the static export. The combined-site check waits for the initial case 06 effect before selecting Fixed; it checks all eleven case URLs and reloads without page or asset errors.
+- Validation passed: root formatting, lint, 42 unit contracts (9 expected Broken failures), 36 development browser checks, Pages build and 36 production browser checks (6 expected Broken failures per browser suite); React formatting, lint, 30 unit contracts (9 expected Broken failures), static build, type checking, 25 browser checks (7 expected Broken failures) and combined-site integration.
+- Case 11 contributes 9 unit contracts (3 expected Broken failures) and 7 browser checks (2 expected Broken failures). Checks cover consent order, delayed acceptance, rejection, query changes, full locations, titles, duplicate prevention, Strict Mode, Back, wishlist parameters, keyboard tabs, narrow layout and absence of external requests.
+- Node formatting, lint, 6 tests, type checking and build passed. WordPress formatting, lint, PHP syntax parsing and 6 browser checks (2 expected Broken failures) passed; an interrupted upstream plugin download required one repeat.
+- Added two visually checked 1600 × 1200 screenshots, a 391-word write-up and a portfolio entry within its title, description and skill limits. Existing case implementations and images are unchanged.
+- Next: run remote CI and verify the published analytics page after integration.
