@@ -82,7 +82,7 @@
   border-radius: 8px;
 }
 .lazy-art {
-  min-height: 24px;
+  min-height: 160px;
   background-position: center;
   background-size: cover;
 }
@@ -270,5 +270,82 @@
   .performance-case .site-header nav {
     flex-wrap: wrap;
     gap: 12px;
+  }
+}
+.performance-broken .notes-banner {
+  min-height: 200px;
+  padding: 28px max(28px, calc((100% - 1224px) / 2));
+}
+.notes-banner p {
+  max-width: 680px;
+  line-height: 1.7;
+  margin: 8px 0;
+}
+.lab-panel {
+  margin: 16px 0;
+  padding: 16px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: white;
+}
+.lab-panel h2 {
+  font-size: 16px;
+  margin: 0 0 6px;
+}
+.lab-panel p {
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--muted);
+}
+.lab-panel dl {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+}
+.lab-panel dt {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.lab-panel dd {
+  margin: 4px 0;
+  font-size: 23px;
+  min-width: 100px;
+}
+.lab-panel dl span {
+  font-size: 10px;
+}
+.lab-panel .lab-pass {
+  color: #436d48;
+}
+.lab-panel .lab-fail {
+  color: #a34835;
+}
+.lab-panel .lab-caption {
+  flex-basis: 100%;
+}
+@media (max-width: 700px) {
+  .performance-broken .notes-banner {
+    min-height: 440px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    padding: 28px;
+  }
+  .lab-panel {
+    padding: 14px;
+  }
+  .lab-panel dl {
+    width: 100%;
+    gap: 12px;
+    justify-content: space-between;
+  }
+  .lab-panel dd {
+    min-width: 0;
+    font-size: 20px;
   }
 }

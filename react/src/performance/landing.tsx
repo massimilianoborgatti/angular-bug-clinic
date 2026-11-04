@@ -1,31 +1,27 @@
 'use client';
 import Image from 'next/image';
-import { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import { projectPrices, type Period } from './pricing';
 import { VitalsPanel } from './vitals';
+import { LabPanel } from './lab-panel';
 import './landing.css';
 const assets = '/angular-bug-clinic/react/case-12/';
 const route = '/angular-bug-clinic/react/cases/12-core-web-vitals/';
 function artworkLoader({ width }: { width: number }) {
   return assets + (width <= 640 ? 'notebook-640.webp' : 'notebook.webp');
 }
-function LazyArtwork() {
+function LazyArtwork({ onReady }: { onReady: () => void }) {
   const target = useRef<HTMLDivElement>(null);
+  const [discovered, setDiscovered] = useState(false);
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    let active = true;
     const observer = new IntersectionObserver((entries) => {
       if (!entries.some((entry) => entry.isIntersecting)) return;
-      const image = new window.Image();
-      image.onload = () => {
-        if (active) setLoaded(true);
-      };
-      image.src = assets + 'notebook-large.png';
+      setDiscovered(true);
       observer.disconnect();
     });
     if (target.current) observer.observe(target.current);
     return () => {
-      active = false;
       observer.disconnect();
     };
   }, []);
@@ -37,8 +33,24 @@ function LazyArtwork() {
       data-testid="hero-art"
       data-loaded={loaded}
       className={'notes-art lazy-art ' + (loaded ? 'art-loaded' : '')}
-      style={loaded ? { backgroundImage: `url(${assets}notebook-large.png)` } : undefined}
-    />
+      style={discovered ? { backgroundImage: `url(${assets}notebook-large.png)` } : undefined}
+    >
+      {/* The load signal shares the background request after JS discovers its URL. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        hidden
+        alt=""
+        src={discovered ? assets + 'notebook-large.png' : undefined}
+        onLoad={() => {
+          setLoaded(true);
+          requestAnimationFrame(() =>
+            requestAnimationFrame(() => {
+              if (target.current?.isConnected) onReady();
+            }),
+          );
+        }}
+      />
+    </div>
   );
 }
 export function PerformanceLanding({ fixed }: { fixed: boolean }) {
@@ -55,10 +67,12 @@ export function PerformanceLanding({ fixed }: { fixed: boolean }) {
   );
   const [slow, setSlow] = useState(() => (fixed ? null : projectPrices('monthly', false)));
   const price = cached?.[period] || slow;
+  const showLateNotice = useCallback(() => setBanner(true), []);
   useEffect(() => {
+    if (!fixed) return;
     const timer = setTimeout(() => setBanner(true), 1200);
     return () => clearTimeout(timer);
-  }, []);
+  }, [fixed]);
   useEffect(() => {
     if (startRef.current === null) return;
     const started = startRef.current;
@@ -97,6 +111,21 @@ export function PerformanceLanding({ fixed }: { fixed: boolean }) {
           </a>
         </nav>
       </header>
+      {banner && (
+        <div className="notes-banner" data-testid="notes-banner">
+          <div>
+            <strong>Notebook preferences</strong>
+            <p>Fictional cookie notice. Nothing is stored or tracked.</p>
+            {!fixed && (
+              <p>
+                This notice arrives after the notebook appears. Dismissing it only closes this
+                panel; your notebook stays the same.
+              </p>
+            )}
+          </div>
+          <button onClick={() => setBanner(false)}>Dismiss notice</button>
+        </div>
+      )}
       <main className="performance-page">
         <header className="performance-heading">
           <p className="eyebrow">CASE 12 / REACT · WEB PERFORMANCE</p>
@@ -116,16 +145,11 @@ export function PerformanceLanding({ fixed }: { fixed: boolean }) {
             </a>
           ))}
         </div>
+        <LabPanel fixed={fixed} />
         <p className="performance-hint">
           Each tab loads a fresh document for comparable metrics. Watch the artwork and banner, then
           toggle billing.
         </p>
-        {banner && (
-          <div className="notes-banner" data-testid="notes-banner">
-            <span>Fictional cookie notice. Nothing is stored or tracked.</span>
-            <button onClick={() => setBanner(false)}>Dismiss notice</button>
-          </div>
-        )}
         <section className="notes-landing" aria-label="Northwind Notes">
           <div className="performance-hero">
             <div className="notes-copy">
@@ -154,7 +178,7 @@ export function PerformanceLanding({ fixed }: { fixed: boolean }) {
                 loader={artworkLoader}
               />
             ) : (
-              <LazyArtwork />
+              <LazyArtwork onReady={showLateNotice} />
             )}
           </div>
           <section className="notes-pricing" id="notes-pricing" aria-label="Simple pricing">

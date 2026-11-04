@@ -20,7 +20,7 @@ const { data, info } = await sharp(Buffer.from(svg))
   .toBuffer({ resolveWithObject: true });
 // Fine paper texture makes the oversized lossless source expensive to transfer.
 let png;
-for (const stride of [4, 8, 12, 16, 24, 32, 48]) {
+for (const stride of [3, 4, 8, 12, 16, 24, 32, 48]) {
   const textured = Buffer.from(data);
   let seed = 11;
   for (let pixel = 0; pixel < info.width * info.height; pixel += stride) {
