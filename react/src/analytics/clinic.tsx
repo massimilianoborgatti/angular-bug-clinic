@@ -101,6 +101,9 @@ function Experiment({
           <Link prefetch={false} href="/cases/13-design-to-code/">
             Case 13
           </Link>
+          <Link prefetch={false} href="/cases/14-code-review-sample/">
+            Case 14
+          </Link>
         </nav>
       </header>
       <main className="case-page analytics-clinic">
