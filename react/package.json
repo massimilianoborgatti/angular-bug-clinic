@@ -19,13 +19,16 @@
     "screenshots": "playwright test --config playwright.screenshots.config.ts",
     "e2e:integration": "playwright test --config playwright.integration.config.ts",
     "prebuild": "node scripts/prepare-worker.mjs",
-    "predev": "node scripts/prepare-worker.mjs"
+    "predev": "node scripts/prepare-worker.mjs",
+    "performance": "node scripts/measure-vitals.mjs",
+    "assets:case-12": "node scripts/case-12-assets.mjs"
   },
   "dependencies": {
     "msw": "3.0.3",
     "next": "16.4.3",
     "react": "19.3.1",
-    "react-dom": "19.3.1"
+    "react-dom": "19.3.1",
+    "web-vitals": "6.2.3"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",
@@ -38,7 +41,9 @@
     "eslint": "^9.39.0",
     "eslint-config-next": "16.4.3",
     "jsdom": "^30.0.0",
+    "lighthouse": "13.6.0",
     "prettier": "^3.8.1",
+    "sharp": "0.35.5",
     "typescript": "~6.0.2",
     "vitest": "5.0.5"
   },

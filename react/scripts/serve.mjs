@@ -1,6 +1,7 @@
 import http from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { resolve, extname, sep } from 'node:path';
+import { gzipSync } from 'node:zlib';
 const root = resolve('out');
 const prefix = '/angular-bug-clinic/react/';
 const types = {
@@ -31,8 +32,16 @@ http
       const path = resolve(root, relative);
       if (!path.startsWith(root + sep)) throw new Error('Invalid path');
       const data = await readFile(path);
-      res.writeHead(200, { 'Content-Type': types[extname(path)] ?? 'application/octet-stream' });
-      res.end(data);
+      const type = types[extname(path)] ?? 'application/octet-stream';
+      const compress =
+        process.env.STATIC_GZIP === '1' &&
+        /text\/|json|svg/.test(type) &&
+        /gzip/.test(req.headers['accept-encoding'] || '');
+      res.writeHead(200, {
+        'Content-Type': type,
+        ...(compress ? { 'Content-Encoding': 'gzip', Vary: 'Accept-Encoding' } : {}),
+      });
+      res.end(compress ? gzipSync(data) : data);
     } catch {
       res.writeHead(404);
       res.end('Not found');
