@@ -1,0 +1,86 @@
+.analytics-clinic .analytics-shop {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  padding: 20px;
+  background: #f6f8ef;
+}
+.analytics-clinic .shop-heading {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+.analytics-clinic .shop-heading h2 {
+  font-size: 25px;
+  margin-bottom: 8px;
+}
+.analytics-clinic .shop-heading .metric {
+  text-align: right;
+  margin: 0 0 8px;
+}
+.analytics-clinic .analytics-shop nav,
+.analytics-clinic .analytics-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.analytics-clinic .shop-content {
+  padding: 16px 0;
+}
+.analytics-clinic .shop-content p,
+.analytics-clinic .consent-choice p {
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.analytics-clinic .consent-choice {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+.analytics-clinic .consent-choice h3 {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+.analytics-clinic .analytics-inspector {
+  margin-top: 24px;
+}
+.analytics-clinic .analytics-inspector h2 {
+  font-size: 20px;
+}
+.analytics-clinic .analytics-inspector ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fafbf7;
+}
+.analytics-clinic .analytics-inspector li {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+  padding: 12px;
+}
+.analytics-clinic .analytics-inspector pre {
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.analytics-clinic .command-number {
+  color: var(--muted);
+  font-size: 10px;
+}
+.analytics-clinic .mock-note {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .analytics-clinic .shop-heading {
+    flex-direction: column;
+  }
+  .analytics-clinic .shop-heading .metric {
+    text-align: left;
+  }
+}
