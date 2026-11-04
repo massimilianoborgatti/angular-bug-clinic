@@ -70,6 +70,15 @@ test('12 Broken visibly expands its image after loading and inserts the notice i
   await expect(page.getByTestId('hero-art')).toHaveAttribute('data-loaded', 'true', {
     timeout: 15000,
   });
+  await page.evaluate(
+    () =>
+      new Promise<void>((resolve) =>
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+        ),
+      ),
+  );
+  await expect(page.getByTestId('notes-banner')).toHaveCount(0);
   for (const name of ['LCP', 'CLS', 'TBT'])
     await expect(page.getByTestId('lab-' + name)).toHaveAttribute('data-status', 'fail');
   await expect(page.getByTestId('notes-banner')).toBeVisible({ timeout: 15000 });

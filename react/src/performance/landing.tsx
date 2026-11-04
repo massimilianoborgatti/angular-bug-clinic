@@ -25,6 +25,12 @@ function LazyArtwork({ onReady }: { onReady: () => void }) {
       observer.disconnect();
     };
   }, []);
+  useEffect(() => {
+    if (!loaded) return;
+    // Preference initialization is late work, after the artwork's first paint.
+    const timer = setTimeout(onReady, 1200);
+    return () => clearTimeout(timer);
+  }, [loaded, onReady]);
   return (
     <div
       ref={target}
@@ -40,15 +46,9 @@ function LazyArtwork({ onReady }: { onReady: () => void }) {
       <img
         hidden
         alt=""
+        fetchPriority="high"
         src={discovered ? assets + 'notebook-large.png' : undefined}
-        onLoad={() => {
-          setLoaded(true);
-          requestAnimationFrame(() =>
-            requestAnimationFrame(() => {
-              if (target.current?.isConnected) onReady();
-            }),
-          );
-        }}
+        onLoad={() => setLoaded(true)}
       />
     </div>
   );
