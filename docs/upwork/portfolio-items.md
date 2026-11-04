@@ -177,3 +177,19 @@ Portfolio copy for each case
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/11-spa-analytics/)
 
 **Screenshots:** [Broken](../screenshots/11-broken.png) · [Fixed](../screenshots/11-fixed.png)
+
+## 12 — Core Web Vitals on a landing page
+
+**Title:** Speed fix: Core Web Vitals on a Next.js landing page
+
+**Role:** Developer
+
+**Description:** A landing page loaded its artwork late, shifted under a notice and paused when changing billing. I traced oversized images, missing reserved space and repeated locale formatting. Priority WebP, a preloaded swap font, stable dimensions, an overlay notice and memoized pricing repair the flow. Three-run mobile Lighthouse medians check LCP, CLS and TBT budgets; browser tests compare Broken with Fixed and verify a toggle response below 100 ms. A local panel reports real browser Web Vitals.
+
+**Skills:** Web Performance, Next.js, React, Core Web Vitals, JavaScript
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/12-core-web-vitals)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/12-core-web-vitals/)
+
+**Screenshots:** [Broken](../screenshots/12-broken.png) · [Fixed](../screenshots/12-fixed.png)

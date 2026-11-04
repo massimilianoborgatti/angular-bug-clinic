@@ -9,3 +9,5 @@ package-lock.json
 tsconfig.tsbuildinfo
 
 public/mockServiceWorker.js
+.lighthouseci/
+public/case-12/notebook.svg
