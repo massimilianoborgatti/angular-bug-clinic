@@ -95,6 +95,9 @@ function Experiment({
           <Link prefetch={false} href={base} aria-current="page">
             Case 11
           </Link>
+          <Link prefetch={false} href="/cases/12-core-web-vitals/">
+            Case 12
+          </Link>
         </nav>
       </header>
       <main className="case-page analytics-clinic">
