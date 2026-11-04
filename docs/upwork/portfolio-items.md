@@ -209,3 +209,21 @@ Portfolio copy for each case
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/13-design-to-code/)
 
 **Screenshots:** [Broken](../screenshots/13-broken.png) · [Fixed](../screenshots/13-fixed.png)
+
+## 14 — Sample code review report
+
+**Title:** Sample code review: security and quality in an AI-built Next.js app
+
+**Role:** Developer
+
+**Description:** Reviewed a fictional notes app with cross-team access, active saved markup and unvalidated requests. I traced ownership checks, rendering and input boundaries, then documented nine findings with source lines, severity, effort and real repair diffs. A fixed copy and paired unit/browser tests prove the main repairs; separate checks establish the Broken symptoms. The owner summary, full web report and PDF explain priorities and limits in plain English. The sample app runs only locally.
+
+**Skills:** Code Review, React, Next.js, TypeScript, Web Application Security
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/14-code-review-sample)
+
+**Live demo:** [Read the report and compare evidence](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/14-code-review-sample/)
+
+**Full report:** [Read online](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/14-code-review-sample/report/) · [PDF](https://massimilianoborgatti.github.io/angular-bug-clinic/react/case-14/code-review-sample.pdf)
+
+**Screenshots:** [Broken](../screenshots/14-broken.png) · [Fixed](../screenshots/14-fixed.png)
