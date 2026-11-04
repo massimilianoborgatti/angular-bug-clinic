@@ -37,6 +37,7 @@ export default function Page() {
           <a href="/angular-bug-clinic/react/cases/09-form-errors/" aria-current="page">
             Case 09
           </a>
+          <a href="/angular-bug-clinic/react/cases/11-spa-analytics/">Case 11</a>
           <a href="https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/09-form-errors">
             Source code ↗
           </a>
