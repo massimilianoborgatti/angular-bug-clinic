@@ -109,6 +109,7 @@ export function PerformanceLanding({ fixed }: { fixed: boolean }) {
           <a href={route} aria-current="page">
             Case 12
           </a>
+          <a href="/angular-bug-clinic/react/cases/13-design-to-code/">Case 13</a>
         </nav>
       </header>
       {banner && (
