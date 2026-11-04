@@ -8,7 +8,7 @@ describe('case library', () => {
     const fixture = TestBed.createComponent(Home);
     await fixture.whenStable();
     const element: HTMLElement = fixture.nativeElement;
-    expect(element.querySelectorAll('.case-card')).toHaveLength(12);
+    expect(element.querySelectorAll('.case-card')).toHaveLength(13);
     expect(element.querySelector('a[href="react/"]')?.textContent).toContain('React · Next.js');
     expect(element.textContent).toContain('Understand the');
   });

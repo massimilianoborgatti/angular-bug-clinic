@@ -1,0 +1,40 @@
+.design-intro {
+  max-width: 1328px;
+  margin: 32px auto;
+  padding: 0 56px;
+}
+.design-intro .back-link {
+  margin-bottom: 24px;
+}
+.design-intro h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  margin: 16px 0;
+}
+.design-intro > p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.design-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+  margin: 20px 0;
+}
+.design-intro [role='tablist'] {
+  display: flex;
+  gap: 8px;
+}
+.design-intro [aria-selected='true'] {
+  background: var(--forest);
+  color: white;
+}
+.design-hint {
+  max-width: 800px;
+  margin-top: 16px;
+}
+@media (max-width: 760px) {
+  .design-intro {
+    padding: 0 20px;
+  }
+}

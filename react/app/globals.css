@@ -381,13 +381,15 @@ pre {
   display: block;
 }
 .site-header {
-  height: 88px;
+  min-height: 88px;
+  height: auto;
+  flex-wrap: wrap;
   max-width: 1440px;
   margin: auto;
-  padding: 0 56px;
+  padding: 20px 56px;
   display: flex;
   align-items: center;
-  gap: 64px;
+  gap: 20px 36px;
   border-bottom: 1px solid var(--line);
 }
 .brand {
@@ -416,7 +418,8 @@ pre {
 }
 .site-header nav {
   display: flex;
-  gap: 30px;
+  flex-wrap: wrap;
+  gap: 12px 20px;
   align-items: center;
   font-size: 13px;
 }

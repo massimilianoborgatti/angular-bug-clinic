@@ -193,3 +193,19 @@ Portfolio copy for each case
 **Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/12-core-web-vitals/)
 
 **Screenshots:** [Broken](../screenshots/12-broken.png) · [Fixed](../screenshots/12-fixed.png)
+
+## 13 — Responsive design to code
+
+**Title:** Design to code: a responsive, accessible React landing page
+
+**Role:** Developer
+
+**Description:** A studio landing page overflowed on phones, overlapped its hero and left keyboard controls inactive. I traced rigid widths, absolute positioning, copied colours and div-based interactions. A token-driven grid, fluid type, native buttons and disclosures restore the design and its behavior. Playwright checks four widths, keyboard operation, target sizes, axe findings and visual agreement with two original desktop/mobile mockups. Broken proves the symptoms; Fixed passes the same contracts.
+
+**Skills:** HTML5, CSS, Responsive Design, React, Web Accessibility
+
+**Write-up:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/13-design-to-code)
+
+**Live demo:** [Try Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/13-design-to-code/)
+
+**Screenshots:** [Broken](../screenshots/13-broken.png) · [Fixed](../screenshots/13-fixed.png)
