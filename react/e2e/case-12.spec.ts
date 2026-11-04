@@ -28,9 +28,20 @@ for (const fixed of [false, true]) {
       const cdp = await page.context().newCDPSession(page);
       await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
       await page.goto('./' + base + variant + '/');
+      await page.getByTestId('hero-art').scrollIntoViewIfNeeded();
+      if (!fixed)
+        await expect
+          .poll(
+            () =>
+              page
+                .getByTestId('hero-art')
+                .evaluate((element) => getComputedStyle(element).backgroundImage),
+            { timeout: 15000 },
+          )
+          .toContain('notebook-large.png');
       await expect(page.getByTestId('plan-price')).toHaveText('$8');
       // The notice proves hydration has completed before the timed interaction.
-      await expect(page.getByTestId('notes-banner')).toBeVisible();
+      await expect(page.getByTestId('notes-banner')).toBeVisible({ timeout: 15000 });
       await page.getByTestId('billing-toggle').click();
       await expect(page.getByTestId('plan-price')).toHaveText('$6');
       await expect(page.getByTestId('toggle-response')).not.toHaveAttribute('data-ms', '');
@@ -46,8 +57,22 @@ test('12 Broken visibly expands its image after loading and inserts the notice i
   const cdp = await page.context().newCDPSession(page);
   await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
   await page.goto('./' + base + 'broken/');
-  await expect(page.getByTestId('hero-art')).toHaveAttribute('data-loaded', 'true');
-  await expect(page.getByTestId('notes-banner')).toBeVisible();
+  await page.getByTestId('hero-art').scrollIntoViewIfNeeded();
+  await expect
+    .poll(
+      () =>
+        page
+          .getByTestId('hero-art')
+          .evaluate((element) => getComputedStyle(element).backgroundImage),
+      { timeout: 15000 },
+    )
+    .toContain('notebook-large.png');
+  await expect(page.getByTestId('hero-art')).toHaveAttribute('data-loaded', 'true', {
+    timeout: 15000,
+  });
+  for (const name of ['LCP', 'CLS', 'TBT'])
+    await expect(page.getByTestId('lab-' + name)).toHaveAttribute('data-status', 'fail');
+  await expect(page.getByTestId('notes-banner')).toBeVisible({ timeout: 15000 });
   expect(
     await page
       .getByTestId('notes-banner')
@@ -66,10 +91,12 @@ test('12 Fixed uses priority WebP, an overlay notice, real browser metrics and a
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto('./' + base + 'fixed/');
   await expect(page).toHaveTitle('The landing page that felt slow | Bug Clinic');
+  for (const name of ['LCP', 'CLS', 'TBT'])
+    await expect(page.getByTestId('lab-' + name)).toHaveAttribute('data-status', 'pass');
   await expect(page.getByTestId('hero-art')).toHaveAttribute('src', /notebook\.webp$/);
   await expect(page.getByTestId('hero-art')).toHaveAttribute('width', '1200');
   await expect(page.getByTestId('hero-art')).toHaveAttribute('sizes', /100vw/);
-  await expect(page.getByTestId('notes-banner')).toBeVisible();
+  await expect(page.getByTestId('notes-banner')).toBeVisible({ timeout: 15000 });
   expect(
     await page
       .getByTestId('notes-banner')

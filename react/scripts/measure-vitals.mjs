@@ -90,7 +90,23 @@ try {
   console.log('MEDIANS', JSON.stringify(summary));
   if (failures(summary.fixed).length)
     throw Error('Fixed budget failures: ' + failures(summary.fixed).join(', '));
-  if (!failures(summary.broken).length) throw Error('Broken unexpectedly passed all budgets');
+  const brokenSeverity = {
+    LCP: summary.broken.LCP > 4000,
+    CLS: summary.broken.CLS > 0.25,
+    TBT: summary.broken.TBT > 500,
+  };
+  if (
+    failures(summary.broken).length !== 3 ||
+    Object.values(brokenSeverity).some((passes) => !passes)
+  )
+    throw Error(
+      'Broken must exceed LCP 4000 ms, CLS 0.25 and TBT 500 ms: ' + JSON.stringify(brokenSeverity),
+    );
+  if (process.argv.includes('--record'))
+    await writeFile(
+      'src/performance/lab-results.json',
+      JSON.stringify({ lighthouseVersion: '13.6.0', medians: summary }, null, 2) + '\n',
+    );
   console.log('PASS Fixed budgets: LCP <2500 ms, CLS <0.1, TBT <200 ms');
   console.log('EXPECTED FAILURE Broken budgets:', failures(summary.broken).join(', '));
 } finally {
