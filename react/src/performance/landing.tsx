@@ -110,6 +110,7 @@ export function PerformanceLanding({ fixed }: { fixed: boolean }) {
             Case 12
           </a>
           <a href="/angular-bug-clinic/react/cases/13-design-to-code/">Case 13</a>
+          <a href="/angular-bug-clinic/react/cases/14-code-review-sample/">Case 14</a>
         </nav>
       </header>
       {banner && (

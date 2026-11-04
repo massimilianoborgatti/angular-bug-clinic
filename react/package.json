@@ -22,13 +22,16 @@
     "predev": "node scripts/prepare-worker.mjs",
     "performance": "node scripts/measure-vitals.mjs",
     "assets:case-12": "node scripts/case-12-assets.mjs",
-    "design:case-13": "node scripts/capture-case-13-design.mjs"
+    "design:case-13": "node scripts/capture-case-13-design.mjs",
+    "report:case-14": "node scripts/print-case-14.mjs"
   },
   "dependencies": {
     "msw": "3.0.3",
     "next": "16.4.3",
     "react": "19.3.1",
     "react-dom": "19.3.1",
+    "react-markdown": "10.1.0",
+    "remark-gfm": "4.0.1",
     "web-vitals": "6.2.3"
   },
   "devDependencies": {
