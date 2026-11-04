@@ -9,7 +9,7 @@ test('the combined static site links both apps and preserves every Angular case 
     if (response.status() >= 400) failedAssets.push(response.url());
   });
   await page.goto('./');
-  await expect(page.locator('.case-card')).toHaveCount(12);
+  await expect(page.locator('.case-card')).toHaveCount(13);
   await page.getByRole('link', { name: /CASE 06/ }).click();
   await expect(page).toHaveURL(/\/angular-bug-clinic\/react\/$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The effect that never stopped');
@@ -25,7 +25,7 @@ test('the combined static site links both apps and preserves every Angular case 
   await page.reload();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The effect that never stopped');
   await page.getByRole('link', { name: 'Back to the case library', exact: false }).click();
-  await expect(page.locator('.case-card')).toHaveCount(12);
+  await expect(page.locator('.case-card')).toHaveCount(13);
   for (const slug of [
     '01-subscription-leak',
     '02-onpush-stale-view',
@@ -74,6 +74,20 @@ test('the combined static site links both apps and preserves every Angular case 
   );
   await page.getByRole('tab', { name: 'Fixed', exact: true }).click();
   await expect(page.getByTestId('hero-art')).toHaveAttribute('src', /notebook\.webp$/);
+  await page.goto('./');
+  await page.getByRole('link', { name: /CASE 13/ }).click();
+  await expect(page).toHaveURL(/\/react\/cases\/13-design-to-code\/$/);
+  await page.reload();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'The design that broke on phones',
+  );
+  await page.getByRole('tab', { name: 'Fixed', exact: true }).click();
+  await expect(page.locator('.studio-fixed')).toBeVisible();
+  await expect(
+    page
+      .getByRole('navigation', { name: 'Main navigation' })
+      .getByRole('link', { name: 'Case 13', exact: true }),
+  ).toHaveAttribute('aria-current', 'page');
   expect(failedAssets).toEqual([]);
   expect(errors).toEqual([]);
 });
