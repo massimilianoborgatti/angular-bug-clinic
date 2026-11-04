@@ -144,6 +144,16 @@ import { cases } from './catalog';
             <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
           </div>
         </a>
+        <a class="case-card" href="react/cases/14-code-review-sample/">
+          <div class="card-top">
+            <span class="case-number">CASE 14</span><span class="tag">Code Review · Next.js</span>
+          </div>
+          <h3>Sample code review: Northwind Notes</h3>
+          <p>Nine findings, a readable report and tested repairs for a fictional notes app.</p>
+          <div class="card-bottom">
+            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
+          </div>
+        </a>
       </div>
     </section>`,
 })

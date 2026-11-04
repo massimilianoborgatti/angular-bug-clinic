@@ -9,7 +9,7 @@ test('the combined static site links both apps and preserves every Angular case 
     if (response.status() >= 400) failedAssets.push(response.url());
   });
   await page.goto('./');
-  await expect(page.locator('.case-card')).toHaveCount(13);
+  await expect(page.locator('.case-card')).toHaveCount(14);
   await page.getByRole('link', { name: /CASE 06/ }).click();
   await expect(page).toHaveURL(/\/angular-bug-clinic\/react\/$/);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The effect that never stopped');
@@ -25,7 +25,7 @@ test('the combined static site links both apps and preserves every Angular case 
   await page.reload();
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('The effect that never stopped');
   await page.getByRole('link', { name: 'Back to the case library', exact: false }).click();
-  await expect(page.locator('.case-card')).toHaveCount(13);
+  await expect(page.locator('.case-card')).toHaveCount(14);
   for (const slug of [
     '01-subscription-leak',
     '02-onpush-stale-view',
@@ -88,6 +88,20 @@ test('the combined static site links both apps and preserves every Angular case 
       .getByRole('navigation', { name: 'Main navigation' })
       .getByRole('link', { name: 'Case 13', exact: true }),
   ).toHaveAttribute('aria-current', 'page');
+  await page.goto('./');
+  await page.getByRole('link', { name: /CASE 14/ }).click();
+  await expect(page).toHaveURL(/\/react\/cases\/14-code-review-sample\/$/);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'Sample code review: Northwind Notes',
+  );
+  await page.getByRole('link', { name: 'Read the full report' }).click();
+  await page.reload();
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'Northwind Notes: sample code review',
+  );
+  const pdf = await page.request.get('/angular-bug-clinic/react/case-14/code-review-sample.pdf');
+  expect(pdf.status()).toBe(200);
+  expect((await pdf.body()).length).toBeLessThan(1000000);
   expect(failedAssets).toEqual([]);
   expect(errors).toEqual([]);
 });
