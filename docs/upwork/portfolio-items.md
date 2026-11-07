@@ -236,7 +236,7 @@ Portfolio copy for each case
 
 **Role:** Developer (mobile layout practice)
 
-**Description:** Northline Bicycle Workshop is a fictional WordPress lab demo built by Codex. I practiced two fixes in Elementor Free: fitting the hero copy to the mobile viewport and stacking the service cards. The linked case study shows the original before-and-after screenshots at 390 px.
+**Description:** I used a fictional WordPress practice site to reproduce and fix two mobile layout issues in Elementor Free. I adjusted the hero copy to fit the screen and stacked the three service cards on mobile. The linked case study shows the reference comparison at 390 px.
 
 **Skills:** WordPress, Elementor, Responsive Design, CSS, Bug Fix (confirm the available labels before saving).
 
