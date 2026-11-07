@@ -13,14 +13,14 @@ const comparison = [
   {
     name: 'Broken',
     image: 'broken-390.png',
-    height: 1932,
+    height: 1854,
     alt: 'Mobile landing page with a clipped heading, a desktop menu and three narrow cards on one row.',
     caption: 'The page scrolls sideways and the services cards squeeze into one row.',
   },
   {
     name: 'Fixed',
     image: 'fixed-390.png',
-    height: 2343,
+    height: 2265,
     alt: 'Mobile landing page with a wrapped heading, a compact menu and three stacked services cards.',
     caption: 'The content fits the screen and the mobile menu and testimonials are visible.',
   },
@@ -34,11 +34,11 @@ export default function Page() {
         <p className={styles.eyebrow}>CASE 15 / WORDPRESS · ELEMENTOR FREE</p>
         <h1>Elementor mobile layout fixes</h1>
         <p>
-          Northline Bicycle Workshop is a fictional landing page. Codex built and tested the
-          WordPress demo and captured the evidence below.
+          This fictional workshop landing page is an Elementor Free practice exercise. The
+          comparison shows two mobile layout changes practiced in the local editor.
         </p>
         <p>Massimiliano practiced the hero width and card stacking fixes in Elementor Free.</p>
-        <p>Personal fictional demo. The workshop and testimonials are invented.</p>
+        <p>The workshop and testimonials are fictional.</p>
       </header>
 
       <section aria-labelledby="comparison">

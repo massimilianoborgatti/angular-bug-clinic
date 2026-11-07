@@ -190,6 +190,6 @@
 
 ## 2026-11-07 — Case 15: Elementor mobile layout
 
-- Built a static comparison for a fictional Elementor Free lab, credited the implementation to Codex and prepared two 1600 × 1200 portfolio cards.
+- Built a static comparison for a fictional Elementor Free lab, documented the two layout changes practiced in the editor and prepared two 1600 × 1200 portfolio cards.
 - Re-ran the local WordPress browser checks. At 390 px, Broken measured 540 px wide and Fixed fit the viewport. The menu, anchor navigation and visual form checks passed. The 1280 px captures were byte-identical.
 - Verified the Next.js export at the Pages base path in Chrome. Both mobile images and all five evidence links loaded. No horizontal overflow, page errors or axe violations at 390, 820 and 1280 px.

@@ -1,6 +1,6 @@
 # Case 15 — Elementor mobile layout fixes
 
-Northline Bicycle Workshop is a fictional WordPress landing page created by Codex in Elementor Free with the Hello Elementor theme. The exported portfolio page shows screenshots from that local lab. The contact form is a visual exercise. Massimiliano practiced the hero width and card stacking fixes himself in the local Elementor Free editor and restored the practice page afterwards. The captures show the original Codex implementation.
+Northline Bicycle Workshop is a fictional WordPress landing page used for local practice in Elementor Free with the Hello Elementor theme. Massimiliano practiced the hero width and card stacking fixes in the local editor and restored the page afterwards. The captures show the reference exercise. The contact form is a visual sample.
 
 ## Reproduce the issue
 
