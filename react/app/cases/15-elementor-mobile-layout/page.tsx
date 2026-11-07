@@ -37,6 +37,7 @@ export default function Page() {
           Northline Bicycle Workshop is a fictional landing page built in Elementor Free.
           This comparison shows two mobile layout fixes and the screenshots below.
         </p>
+        <p>Massimiliano practiced the hero width and card stacking fixes in Elementor Free.</p>
         <p>Personal fictional demo. The workshop and testimonials are invented.</p>
       </header>
 
