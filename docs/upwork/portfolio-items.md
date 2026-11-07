@@ -228,15 +228,15 @@ Portfolio copy for each case
 
 **Screenshots:** [Broken](../screenshots/14-broken.png) · [Fixed](../screenshots/14-fixed.png)
 
-## 15 — Elementor mobile layout fixes (draft)
+## 15 — Elementor mobile layout fixes
 
-**Publication gate:** Record and verify Massimiliano's own Elementor work before choosing his role and publishing this entry. Keep the Codex implementation credit. Confirm the final links are live.
+**Status:** Prepared for Massimiliano to save on Upwork after checking the live links.
 
 **Title:** Elementor Free: mobile layout fixes
 
-**Role:** Developer (responsive fixes and verification) — proposed after personal work is verified.
+**Role:** Developer (mobile layout practice)
 
-**Description:** Northline Bicycle Workshop is a fictional WordPress lab demo implemented by Codex. The comparison shows a clipped mobile hero, cramped service cards and a desktop menu at 390 px. The fixed version fits the viewport, stacks the cards and uses a compact menu. See the Broken and Fixed screenshots in the linked case study.
+**Description:** Northline Bicycle Workshop is a fictional WordPress lab demo built by Codex. I practiced two fixes in Elementor Free: fitting the hero copy to the mobile viewport and stacking the service cards. The linked case study shows the original before-and-after screenshots at 390 px.
 
 **Skills:** WordPress, Elementor, Responsive Design, CSS, Bug Fix (confirm the available labels before saving).
 

@@ -37,6 +37,7 @@ export default function Page() {
           Northline Bicycle Workshop is a fictional landing page. Codex built and tested the
           WordPress demo and captured the evidence below.
         </p>
+        <p>Massimiliano practiced the hero width and card stacking fixes in Elementor Free.</p>
         <p>Personal fictional demo. The workshop and testimonials are invented.</p>
       </header>
 
