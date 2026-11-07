@@ -22,6 +22,10 @@ A collection of real-world Angular, Ionic and React bugs, each with a broken ver
 | 12 — Core Web Vitals            | [Read](react/cases/12-core-web-vitals/README.md)        | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/12-core-web-vitals/)    | [Shared landing page](react/src/performance/landing.tsx)                                                                                |
 | 13 — Design to code             | [Read](react/cases/13-design-to-code/README.md)         | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/13-design-to-code/)     | [Shared landing page](react/src/design/studio.tsx) · [Tokens](react/cases/13-design-to-code/design-tokens.json)                         |
 | 14 — Sample code review         | [Read](react/cases/14-code-review-sample/README.md)     | [Open](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/14-code-review-sample/) | [Broken](samples/ai-built-review/broken/) → [Fixed](samples/ai-built-review/fixed/) · [Full report](docs/samples/code-review-sample.md) |
+| 15 — Elementor mobile layout    | [Read][case-15-notes]                                   | [Open][case-15]                                                                                      | [Broken](react/public/case-15/broken-390.png) → [Fixed](react/public/case-15/fixed-390.png)                                             |
+
+[case-15-notes]: react/cases/15-elementor-mobile-layout/README.md
+[case-15]: https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/15-elementor-mobile-layout/
 
 WordPress/WooCommerce fixes in a child theme.
 

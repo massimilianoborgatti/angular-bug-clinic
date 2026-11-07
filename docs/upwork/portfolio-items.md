@@ -227,3 +227,24 @@ Portfolio copy for each case
 **Full report:** [Read online](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/14-code-review-sample/report/) · [PDF](https://massimilianoborgatti.github.io/angular-bug-clinic/react/case-14/code-review-sample.pdf)
 
 **Screenshots:** [Broken](../screenshots/14-broken.png) · [Fixed](../screenshots/14-fixed.png)
+
+## 15 — Elementor mobile layout fixes
+
+**Status:** Prepared for Massimiliano to save on Upwork after checking the live links.
+
+**Title:** Elementor Free: mobile layout fixes
+
+**Role:** Developer (mobile layout practice)
+
+**Description:** Northline Bicycle Workshop is a fictional WordPress lab demo built by Codex. I practiced two fixes in Elementor Free: fitting the hero copy to the mobile viewport and stacking the service cards. The linked case study shows the original before-and-after screenshots at 390 px.
+
+**Skills:** WordPress, Elementor, Responsive Design, CSS, Bug Fix (confirm the available labels before saving).
+
+**Images:**
+
+1. [Broken](../screenshots/15-broken.png): The hero and desktop menu overflow a 390 px viewport.
+2. [Fixed](../screenshots/15-fixed.png): The headline wraps and a compact menu fits the same viewport.
+
+**Case study URL after deployment:** [Compare Broken and Fixed](https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/15-elementor-mobile-layout/)
+
+**Write-up URL after merge:** [Read the case](https://github.com/massimilianoborgatti/angular-bug-clinic/tree/main/react/cases/15-elementor-mobile-layout)

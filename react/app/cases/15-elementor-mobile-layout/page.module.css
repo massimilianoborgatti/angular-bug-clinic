@@ -1,0 +1,76 @@
+.case {
+  width: min(100% - 2rem, 62rem);
+  margin-inline: auto;
+  padding-block: 2rem 4rem;
+}
+
+.case a {
+  color: inherit;
+  text-underline-offset: 0.18em;
+}
+
+.header {
+  max-width: 42rem;
+  margin-block: 2.5rem;
+}
+
+.header h1 {
+  margin-block: 0.35em;
+  font-size: clamp(2rem, 6vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.eyebrow {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 4vw, 2.5rem);
+  align-items: start;
+  max-width: 54rem;
+}
+
+.figure {
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px solid #536659;
+  border-radius: 0.75rem;
+}
+
+.figure figcaption {
+  display: grid;
+  gap: 0.25rem;
+  margin-block-end: 0.75rem;
+}
+
+.figure a {
+  display: block;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.notes {
+  max-width: 46rem;
+  margin-block-start: 2rem;
+}
+
+.notes ul {
+  padding-inline-start: 1.35rem;
+}
+
+.evidence li + li {
+  margin-block-start: 0.35rem;
+}
+
+@media (max-width: 40rem) {
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+}

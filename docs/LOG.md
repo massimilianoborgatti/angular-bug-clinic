@@ -187,3 +187,9 @@
 - Connected the fourteenth library card, React navigation and dedicated metadata. Added a 374-word case write-up, a portfolio title of 67 characters and description of 487 characters with five skills, plus two visually checked 1600 by 1200 light-theme screenshots. The overview presents the first owner priorities and links to the complete report.
 - Validation passed: root formatting, lint, 42 unit contracts (9 expected Broken failures), 36 development and 36 Pages browser checks (6 expected Broken failures per browser suite), and the Pages build; React formatting, lint, 30 unit contracts (9 expected Broken failures), static build, type checking, 56 browser checks (19 expected Broken failures), two screenshot checks and combined-site navigation through all fourteen cases. Report checks preserve every heading, finding and diff, verify the PDF fingerprint and size, exercise keyboard tabs and scan both report views at 375 pixels with zero serious/critical axe findings.
 - Rechecked the unchanged mobile budgets after navigation integration: Broken/Fixed medians were LCP 6.908/2.142 seconds, CLS 0.438/0.000 and TBT 2754/130 milliseconds. Broken exceeds all three thresholds and Fixed passes each budget. The recorded-results snapshot remains unchanged.
+
+## 2026-11-07 — Case 15: Elementor mobile layout
+
+- Built a static comparison for a fictional Elementor Free lab, credited the implementation to Codex and prepared two 1600 × 1200 portfolio cards.
+- Re-ran the local WordPress browser checks. At 390 px, Broken measured 540 px wide and Fixed fit the viewport. The menu, anchor navigation and visual form checks passed. The 1280 px captures were byte-identical.
+- Verified the Next.js export at the Pages base path in Chrome. Both mobile images and all five evidence links loaded. No horizontal overflow, page errors or axe violations at 390, 820 and 1280 px.
