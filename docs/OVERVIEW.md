@@ -1,8 +1,8 @@
 # Angular Bug Clinic overview
 
-A collection of real-world Angular, Ionic and React bugs, each with a broken version, a fix, a test that proves the fix, and a short write-up.
+A collection of real-world web debugging case studies, each with a broken version, a fix, a test that proves the fix, and a short write-up.
 
-The examples use a small tasks and notifications application with in-memory mock data. Each case presents one visible symptom and one focused repair, so the behavior and its cause can be explored in about two minutes.
+The Angular and Ionic examples use in-memory tasks and notifications. The other cases use separate fictional applications. Each case pairs visible symptoms with focused repairs.
 
 ## How a case works
 
@@ -12,7 +12,7 @@ Every case includes a regression test for the desired behavior. The same invaria
 
 The case README explains the symptom, gives a short reproduction, identifies the root cause, describes the fix, links to the relevant change, and explains how it is tested. It ends with a takeaway that applies beyond the example.
 
-## The fifteen cases
+## Case catalog
 
 <!-- prettier-ignore -->
 1. [Subscription leak](../src/app/cases/01-subscription-leak/README.md): leaving and reopening a notification widget multiplies its listeners → tie the subscription to component destruction with `takeUntilDestroyed`.
@@ -39,7 +39,7 @@ Vitest is the Angular CLI default unit-test runner. Playwright checks the browse
 
 GitHub Actions runs formatting, lint, unit tests, browser tests, and the production build. A successful main-branch CI run enables deployment to GitHub Pages. Hash routing keeps direct case links and reloads working on a static deployment without server-side route handling; the build also sets the `/angular-bug-clinic/` base path.
 
-Case 06 runs independently in `react/` using Next.js static export, React, Vitest and React Testing Library. Its own CI job checks the build at `/angular-bug-clinic/react/`; Pages publishes both apps together.
+The app in `react/` uses Next.js static export, React, Vitest and React Testing Library. Its own CI job checks the build at `/angular-bug-clinic/react/`. Pages publishes both apps together.
 
 Case 07 adds an optional local Express API in `node/`. Its pure token module is shared with MSW browser handlers; the published demo needs no deployed API. A separate CI job checks the API, and the React suite checks the client and browser mock.
 

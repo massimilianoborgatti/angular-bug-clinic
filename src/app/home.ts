@@ -1,18 +1,20 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { caseLibrary } from './case-library';
 import { cases } from './catalog';
 @Component({
   selector: 'clinic-home',
-  imports: [RouterLink],
+  imports: [NgTemplateOutlet, RouterLink],
   template: `<section class="home-hero">
       <div>
         <p class="eyebrow"><span class="tiny-cross">+</span> THE DEBUGGING NOTEBOOK</p>
         <h1>Find the bug.<br />Understand the <em>fix.</em></h1>
         <p class="hero-copy">
-          Twelve small debugging case studies.<br />Real symptoms, focused fixes, and tests that
-          prove the difference.
+          {{ caseLibrary.length }} small debugging case studies.<br />Real symptoms, focused fixes,
+          and tests that prove the difference.
         </p>
-        <a class="button primary" [routerLink]="['/cases', cases[0].slug]"
+        <a class="button primary" [routerLink]="['/cases', firstCase.slug]"
           >Explore the first case <span aria-hidden="true">↗</span></a
         >
       </div>
@@ -42,121 +44,36 @@ import { cases } from './catalog';
           <p class="eyebrow">THE CASE LIBRARY</p>
           <h2>Little details. Noticeable consequences.</h2>
         </div>
-        <span class="case-total">12 cases / one clear approach</span>
+        <span class="case-total">{{ caseLibrary.length }} cases / one clear approach</span>
       </div>
       <div class="case-grid">
-        @for (item of cases; track item.id) {
-          <a class="case-card" [routerLink]="['/cases', item.slug]"
-            ><div class="card-top">
+        @for (item of caseLibrary; track item.id) {
+          <ng-template #card>
+            <div class="card-top">
               <span class="case-number">CASE {{ item.id }}</span
               ><span class="tag">{{ item.category }}</span>
             </div>
             <h3>{{ item.title }}</h3>
             <p>{{ item.symptom }}</p>
             <div class="card-bottom">
-              <span>{{ item.ready ? 'Broken → Fixed' : 'Coming in its own PR' }}</span
-              ><span aria-hidden="true">↗</span>
-            </div></a
-          >
+              <span>{{ item.ready === false ? 'Coming soon' : 'Broken → Fixed' }}</span>
+              <span aria-hidden="true">↗</span>
+            </div>
+          </ng-template>
+          @if (item.href) {
+            <a class="case-card" [href]="item.href">
+              <ng-container [ngTemplateOutlet]="card" />
+            </a>
+          } @else {
+            <a class="case-card" [routerLink]="['/cases', item.slug]">
+              <ng-container [ngTemplateOutlet]="card" />
+            </a>
+          }
         }
-        <a class="case-card" href="react/">
-          <div class="card-top">
-            <span class="case-number">CASE 06</span><span class="tag">React · Next.js</span>
-          </div>
-          <h3>The effect that never stopped</h3>
-          <p>
-            A changing dependency keeps requests running, and an old response replaces the latest
-            filter.
-          </p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div>
-        </a>
-        <a class="case-card" href="react/cases/07-node-refresh-race/">
-          <div class="card-top">
-            <span class="case-number">CASE 07</span><span class="tag">React · Node.js</span>
-          </div>
-          <h3>Logged out at random</h3>
-          <p>Three expired requests race to refresh one session and revoke it.</p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div>
-        </a>
-        <a class="case-card" routerLink="/cases/08-keyboard-dialog"
-          ><div class="card-top">
-            <span class="case-number">CASE 08</span><span class="tag">Angular · Accessibility</span>
-          </div>
-          <h3>The dialog that keyboard users couldn't leave</h3>
-          <p>A contact editor leaves keyboard focus under an overlay.</p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div></a
-        >
-        <a class="case-card" href="react/cases/09-form-errors/"
-          ><div class="card-top">
-            <span class="case-number">CASE 09</span><span class="tag">React · Accessibility</span>
-          </div>
-          <h3>The form errors nobody heard</h3>
-          <p>
-            Validation errors appear on screen without names, descriptions or a focus destination.
-          </p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div></a
-        >
-        <a class="case-card" routerLink="/cases/10-woocommerce-cart">
-          <div class="card-top">
-            <span class="case-number">CASE 10</span><span class="tag">WordPress · WooCommerce</span>
-          </div>
-          <h3>The cart that only updated after a reload</h3>
-          <p>An AJAX addition succeeds, but a custom header badge and spinner stay stale.</p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div>
-        </a>
-        <a class="case-card" href="react/cases/11-spa-analytics/">
-          <div class="card-top">
-            <span class="case-number">CASE 11</span><span class="tag">React · Analytics</span>
-          </div>
-          <h3>Page views that lied</h3>
-          <p>Duplicate initial views, missing navigation events and a consent choice ignored.</p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div>
-        </a>
-        <a class="case-card" href="react/cases/12-core-web-vitals/">
-          <div class="card-top">
-            <span class="case-number">CASE 12</span><span class="tag">React · Web Performance</span>
-          </div>
-          <h3>The landing page that felt slow</h3>
-          <p>Late artwork, moving content and repeated work slow a simple landing page.</p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div>
-        </a>
-        <a class="case-card" href="react/cases/13-design-to-code/">
-          <div class="card-top">
-            <span class="case-number">CASE 13</span><span class="tag">React · Design to code</span>
-          </div>
-          <h3>The design that broke on phones</h3>
-          <p>A rigid landing page overlaps, overflows and leaves keyboard controls behind.</p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div>
-        </a>
-        <a class="case-card" href="react/cases/14-code-review-sample/">
-          <div class="card-top">
-            <span class="case-number">CASE 14</span><span class="tag">Code Review · Next.js</span>
-          </div>
-          <h3>Sample code review: Northwind Notes</h3>
-          <p>Nine findings, a readable report and tested repairs for a fictional notes app.</p>
-          <div class="card-bottom">
-            <span>Broken → Fixed</span><span aria-hidden="true">↗</span>
-          </div>
-        </a>
       </div>
     </section>`,
 })
 export class Home {
-  readonly cases = cases.filter((item) => item.id !== '08');
+  readonly caseLibrary = caseLibrary;
+  readonly firstCase = cases[0];
 }
