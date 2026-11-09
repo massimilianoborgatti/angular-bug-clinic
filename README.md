@@ -1,8 +1,16 @@
 # Angular Bug Clinic
 
-A collection of real-world Angular, Ionic and React bugs, each with a broken version, a fix, a test and a write-up. The examples are original, use neutral in-memory tasks, notifications and orders, and can be explored in about two minutes each.
+![The Angular Bug Clinic subscription leak demo with Fixed selected and one handler call shown](docs/screenshots/01-fixed.png)
+
+A collection of interactive web debugging case studies with demos, regression tests and short write-ups.
 
 [Open the live demo](https://massimilianoborgatti.github.io/angular-bug-clinic/) · [Source](https://github.com/massimilianoborgatti/angular-bug-clinic)
+
+## What this demonstrates
+
+- Reproducible real-world bugs with steps you can follow in the demo.
+- Minimal, focused fixes that make the cause and repair easy to compare.
+- Regression tests that fail on Broken and pass on Fixed.
 
 ## Cases
 
@@ -27,19 +35,18 @@ A collection of real-world Angular, Ionic and React bugs, each with a broken ver
 [case-15-notes]: react/cases/15-elementor-mobile-layout/README.md
 [case-15]: https://massimilianoborgatti.github.io/angular-bug-clinic/react/cases/15-elementor-mobile-layout/
 
-WordPress/WooCommerce fixes in a child theme.
+### Areas covered
 
-SPA analytics: route-aware GA4 page views, Consent Mode v2 and a local dataLayer inspector.
+- **WordPress** covers WooCommerce cart fragments in a child theme and responsive Elementor layouts.
+- **SPA analytics** covers route-aware GA4 page views, Consent Mode v2 and a local `dataLayer` inspector.
+- **Performance** covers LCP, CLS and interaction repairs with mobile Lighthouse budgets.
+- **Design to code** covers original desktop and mobile mockups, token-driven layouts and keyboard controls.
+- **Code review** covers nine evidence-based findings in a fictional notes app, with paired repairs and a web and PDF report.
+- **Accessibility** covers targeted WCAG 2.2 repairs verified with keyboard tests, axe-core checks and a manual NVDA pass.
 
-Performance: measured LCP, CLS and interaction repairs with mobile Lighthouse budgets.
+## Development
 
-Design to code: original desktop/mobile mockups, token-driven responsive layouts and keyboard controls.
-
-Code review: a fictional notes app, nine evidence-based findings, paired repairs and a readable web/PDF report.
-
-Accessibility: targeted WCAG 2.2 repairs verified with keyboard contracts, axe-core checks and a manual NVDA pass.
-
-## Run locally
+### Run locally
 
 Use Node.js 24.15 or later within the 24.x release line.
 
@@ -51,7 +58,7 @@ npm start
 
 Open http://127.0.0.1:4200. Hash routing supports direct case links and reloads on GitHub Pages without a backend or redirect workaround.
 
-### React cases
+#### React cases
 
 The React cases share an independent Next.js static app with its own lockfile.
 
@@ -64,7 +71,7 @@ npm run dev
 
 Open http://127.0.0.1:3000/angular-bug-clinic/react/. For the production demo, run `npm run build` and `npm run preview`, then open http://127.0.0.1:4400/angular-bug-clinic/react/. Development Strict Mode performs an extra effect setup; the production preview shows the one-request invariant.
 
-### Local Tasks API
+#### Local Tasks API
 
 Case 07 uses an in-browser mock on Pages. Its optional Express API runs only locally and in tests, sharing the same token module with the mock.
 
@@ -77,7 +84,7 @@ The API listens at http://127.0.0.1:4500 with `POST /login`, `POST /refresh` and
 
 Run the API checks with `npm --prefix node run format:check`, `npm --prefix node run lint`, `npm --prefix node test` and `npm --prefix node run build` from the repository root.
 
-### WordPress case
+#### WordPress case
 
 Install the case dependencies, then open either shop:
 
@@ -91,11 +98,11 @@ Use separate terminals for the last two commands. First preparation can take sev
 
 Run `npm --prefix wordpress/case-10 run format:check`, `npm --prefix wordpress/case-10 run lint`, `npm --prefix wordpress/case-10 run lint:php` and `npm run wp:test` for the case checks.
 
-### Local code-review sample
+#### Local code-review sample
 
 Case 14 publishes a static report and PDF. Its separate Next.js notes app and API run only locally and in tests, using in-memory data and a fixed demo identity. Follow the [sample commands](samples/ai-built-review/README.md) to run Broken or Fixed and their paired regression suite. The sample app is excluded from Pages.
 
-## Verify
+### Verify
 
 ```sh
 npm run format:check
@@ -134,12 +141,14 @@ The React CI job checks the static export separately. Pages combines both builds
 
 ## Stack
 
-Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), RxJS, the Angular CLI default Vitest runner, angular-eslint, Prettier, Playwright and GitHub Actions. Ionic 9.0 is lazy loaded only by case 05. Versions are pinned by package-lock.json. Cases 06, 07, 09 and 11–14 use Next.js 16.4, React 19.3, React Testing Library and Vitest with a separate lockfile. Case 07 adds a local Express 5 API and MSW browser interception.
+Angular 22.2 (standalone, signals, strict TypeScript, built-in control flow), RxJS, the Angular CLI default Vitest runner, angular-eslint, Prettier, Playwright and GitHub Actions. Ionic 9.0 is lazy loaded only by case 05. Versions are pinned by package-lock.json. The React app uses Next.js 16.4, React 19.3, React Testing Library and Vitest with a separate lockfile. Case 07 adds a local Express 5 API and MSW browser interception.
 
-## Portfolio material
+## Screenshots
 
-Twenty-eight [1600 × 1200 screenshots](docs/screenshots/), two design reference images and fourteen portfolio descriptions accompany the case write-ups. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
+The [screenshots directory](docs/screenshots/) contains paired 1600 × 1200 captures and the original design reference images. [Project overview](docs/OVERVIEW.md) · [Progress log](docs/LOG.md).
 
 ## License
 
-[MIT](LICENSE). Maintained by [massimilianoborgatti](https://github.com/massimilianoborgatti).
+[MIT](LICENSE).
+
+Built by Massimiliano Borgatti — [LinkedIn](https://www.linkedin.com/in/massimilianoborgatti/)
