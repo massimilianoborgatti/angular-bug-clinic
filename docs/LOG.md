@@ -193,3 +193,8 @@
 - Built a static comparison for a fictional Elementor Free lab, documented the two layout changes practiced in the editor and prepared two 1600 × 1200 portfolio cards.
 - Re-ran the local WordPress browser checks. At 390 px, Broken measured 540 px wide and Fixed fit the viewport. The menu, anchor navigation and visual form checks passed. The 1280 px captures were byte-identical.
 - Verified the Next.js export at the Pages base path in Chrome. Both mobile images and all five evidence links loaded. No horizontal overflow, page errors or axe violations at 390, 820 and 1280 px.
+
+## 2026-11-09 — Home page social preview
+
+- Added static Open Graph and Twitter Card metadata with matching descriptions and a 1200 × 630 preview cropped from the existing Case 01 Fixed screenshot.
+- Added a CI check that builds Pages, parses the generated HTML, and checks the published image URL and its PNG dimensions in the build output.
