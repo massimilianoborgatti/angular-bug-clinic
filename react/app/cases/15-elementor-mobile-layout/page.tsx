@@ -34,10 +34,10 @@ export default function Page() {
         <p className={styles.eyebrow}>CASE 15 / WORDPRESS · ELEMENTOR FREE</p>
         <h1>Elementor mobile layout fixes</h1>
         <p>
-          This fictional workshop landing page is an Elementor Free practice exercise. The
-          comparison shows two mobile layout changes practiced in the local editor.
+          Northline Bicycle Workshop is a fictional WordPress landing page built in Elementor Free
+          with the Hello Elementor theme. The comparison shows two mobile layout fixes: the hero
+          width and the card stacking.
         </p>
-        <p>Massimiliano practiced the hero width and card stacking fixes in Elementor Free.</p>
         <p>The workshop and testimonials are fictional.</p>
       </header>
 

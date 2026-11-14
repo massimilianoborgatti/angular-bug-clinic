@@ -1,6 +1,6 @@
 # Case 15 — Elementor mobile layout fixes
 
-Northline Bicycle Workshop is a fictional WordPress landing page used for local practice in Elementor Free with the Hello Elementor theme. Massimiliano practiced the hero width and card stacking fixes in the local editor and restored the page afterwards. The captures show the reference exercise. The contact form is a visual sample.
+Northline Bicycle Workshop is a fictional WordPress landing page built in Elementor Free with the Hello Elementor theme. The comparison shows two mobile layout fixes: the hero width and the card stacking. The contact form is a visual sample.
 
 ## Reproduce the issue
 
