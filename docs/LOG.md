@@ -199,3 +199,10 @@
 - Added a unit test for the home counts and reused the registry in the library navigation tests.
 - Reorganized the README around the cases and development commands, and retained the screenshots, write-ups and technical log.
 - Validation passed: Angular formatting, lint, 43 unit contracts (9 expected Broken failures), 36 development and 36 Pages browser checks, and the Pages build and metadata check. React formatting, lint, 30 unit contracts (9 expected Broken failures), static build, type checking, 56 browser checks and combined-site integration also passed.
+
+## 2026-11-14 — Contributor guide and Case 15 copy
+
+- Renamed the contributor guide to CONTRIBUTING.md with its technical guidance intact.
+- Reworded the fictional workshop introduction around the hero width and card stacking fixes, retaining the technical explanation and evidence.
+- Validation passed: root formatting, lint, 43 unit contracts, 36 development browser checks, the Pages build and 36 production browser checks; React formatting, lint, 30 unit contracts, static build, type checking, 56 browser checks and combined-site integration.
+- The Case 11 reset-count browser check failed once in the first full run. Three focused repeats and the complete 56-test rerun passed with the existing source and assertions.
