@@ -14,7 +14,7 @@ The Fixed copy implements the three High findings and the smaller repairs descri
 
 ## Scope and method
 
-Reviewed the local Next.js app, its note API, shared in-memory records, browser components and locked production dependency graph. Read both implementations, ran the local build, exercised the API and browser, and inspected the changes against the regression tests. The original runtime snapshot is `967e2fe`; the accompanying tests are separate from the Broken copy.
+Reviewed the local Next.js app, its note API, shared in-memory records, browser components and locked production dependency graph. Read both implementations, ran the local build, exercised the API and browser, and inspected the changes against the regression tests. The original runtime snapshot is `0fb6fa9`; the accompanying tests are separate from the Broken copy.
 
 The API obtains a trusted demo viewer from a fixture. No request parameter can change that viewer in Fixed. This isolates record authorization; it does not implement or assess real sign-in, session integrity, invitations or membership administration. Team-only links carry a note ID, not a permission grant. Deployment configuration, live integrations, operational controls and legal compliance were outside scope.
 
@@ -192,11 +192,11 @@ Severity reflects the demonstrated pattern if carried into a real app. Effort es
 
 ### F09 - The original app has no regression cases
 
-**Where:** [samples/ai-built-review/package.json:18](https://github.com/massimilianoborgatti/angular-bug-clinic/blob/967e2fe76c3328a6345710d85b47e96281f3b4b9/samples/ai-built-review/package.json#L18) in runtime snapshot `967e2fe`; added coverage is at [samples/ai-built-review/fixed/tests/notes.test.tsx:14](https://github.com/massimilianoborgatti/angular-bug-clinic/blob/main/samples/ai-built-review/fixed/tests/notes.test.tsx#L14). **Medium.**
+**Where:** [samples/ai-built-review/package.json:18](https://github.com/massimilianoborgatti/angular-bug-clinic/blob/0fb6fa922327e5123df89eb47af521ea4884aecd/samples/ai-built-review/package.json#L18) in runtime snapshot `0fb6fa9`; added coverage is at [samples/ai-built-review/fixed/tests/notes.test.tsx:14](https://github.com/massimilianoborgatti/angular-bug-clinic/blob/main/samples/ai-built-review/fixed/tests/notes.test.tsx#L14). **Medium.**
 
 **Why it matters:** The original runtime snapshot has a test command but no test files in this sample's tree. Working screens alone give no repeatable check of team access, rendering or malformed input. This is a baseline observation, not a claim that the current repository has no tests.
 
-**Reproduce:** Inspect the sample tree at `967e2fe`: there are no unit or browser test cases. The following commit supplies the companion suite under `fixed/tests/` and `e2e/`, keeping Broken as a negative control.
+**Reproduce:** Inspect the sample tree at `0fb6fa9`: there are no unit or browser test cases. The following commit supplies the companion suite under `fixed/tests/` and `e2e/`, keeping Broken as a negative control.
 
 **Repair:** Add focused contracts for the important boundaries and run them in CI. An unexpected Broken pass must fail the suite; separate passing tests must establish the actual symptoms.
 
